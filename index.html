@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ノルウェー旅行ガイド 2026</title>
+<style>
+  :root {
+    --fjord-deep: #1b3a5c;
+    --fjord-blue: #2c5f8a;
+    --aurora-green: #4ecdc4;
+    --aurora-light: #a8e6cf;
+    --aurora-purple: #7c5cbf;
+    --snow: #f7fafc;
+    --cloud: #e8eef4;
+    --text: #2d3748;
+    --text-sub: #64748b;
+    --accent: #e74c3c;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    background: var(--snow);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ===== ヘッダー ===== */
+  header {
+    background: linear-gradient(160deg, var(--fjord-deep) 0%, var(--fjord-blue) 60%, var(--aurora-green) 130%);
+    color: #fff;
+    padding: 60px 20px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::after {
+    content: "";
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 40px;
+    background: var(--snow);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 75% 60%, 55% 20%, 35% 70%, 15% 30%, 0 65%);
+  }
+  header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+  header p.subtitle {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    letter-spacing: 0.15em;
+  }
+
+  /* ===== ナビゲーション ===== */
+  nav {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(27, 58, 92, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  nav a {
+    display: block;
+    padding: 14px 22px;
+    color: var(--fjord-deep);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  nav a:hover {
+    color: var(--aurora-green);
+    border-bottom-color: var(--aurora-green);
+  }
+
+  /* ===== メイン ===== */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+  section { margin-bottom: 60px; }
+  h2 {
+    font-size: 1.5rem;
+    color: var(--fjord-deep);
+    border-left: 6px solid var(--aurora-green);
+    padding-left: 14px;
+    margin-bottom: 24px;
+  }
+
+  /* ===== 全体早見表 ===== */
+  .overview {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(27, 58, 92, 0.08);
+    overflow: hidden;
+    font-size: 0.9rem;
+    margin-bottom: 34px;
+  }
+  .overview thead th {
+    background: var(--fjord-deep);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 0.85rem;
+  }
+  .overview td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--cloud);
+    vertical-align: middle;
+  }
+  .overview tr:last-child td { border-bottom: none; }
+  .overview tbody tr:hover { background: var(--snow); }
+  .overview .ov-date {
+    white-space: nowrap;
+    font-weight: 700;
+  }
+  .overview .ov-date a {
+    color: var(--fjord-blue);
+    text-decoration: none;
+  }
+  .overview .ov-date a:hover { text-decoration: underline; }
+  .ov-stay {
+    display: inline-block;
+    background: var(--cloud);
+    color: var(--fjord-deep);
+    border-radius: 12px;
+    padding: 1px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .ov-stay.aurora { background: #f3eefc; color: var(--aurora-purple); }
+
+  /* ===== 日別タイムライン ===== */
+  .day-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(27, 58, 92, 0.08);
+    margin-bottom: 22px;
+    overflow: hidden;
+    scroll-margin-top: 70px;
+  }
+  .day-header {
+    background: linear-gradient(135deg, var(--fjord-deep), var(--fjord-blue));
+    color: #fff;
+    padding: 10px 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .day-header .day-date { font-size: 1.05rem; font-weight: 700; }
+  .day-header .day-title { font-size: 0.88rem; opacity: 0.9; }
+  .day-header .day-stay {
+    margin-left: auto;
+    font-size: 0.8rem;
+    background: rgba(255,255,255,0.18);
+    border-radius: 12px;
+    padding: 2px 12px;
+    white-space: nowrap;
+  }
+  .day-body { padding: 16px 20px; }
+
+  /* ===== 折りたたみカード（アコーディオン） ===== */
+  details.acc {
+    background: #fff;
+    border: 1px solid var(--cloud);
+    border-left-width: 6px;
+    border-radius: 10px;
+    margin: 10px 0;
+  }
+  details.acc.flight { border-left-color: var(--fjord-blue); }
+  details.acc.hotel  { border-left-color: var(--aurora-green); }
+  details.acc.tour   { border-left-color: var(--aurora-purple); }
+  .acc summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    cursor: pointer;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  .acc summary::-webkit-details-marker { display: none; }
+  .acc summary::after {
+    content: "▾";
+    margin-left: auto;
+    color: var(--text-sub);
+    transition: transform 0.2s;
+  }
+  .acc[open] summary::after { transform: rotate(180deg); }
+  .acc summary:hover { background: var(--snow); border-radius: 10px; }
+  .acc-time {
+    background: var(--cloud);
+    color: var(--fjord-blue);
+    border-radius: 6px;
+    padding: 2px 10px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .acc.tour .acc-time { background: #f3eefc; color: var(--aurora-purple); }
+  .acc-title { font-weight: 700; font-size: 0.95rem; color: var(--fjord-deep); }
+  .acc-sub { font-size: 0.8rem; color: var(--text-sub); }
+  .acc-body { padding: 4px 18px 18px; border-top: 1px dashed var(--cloud); }
+
+  /* ===== フライトカード（アコーディオン内） ===== */
+  .flight-route {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .flight-point {
+    text-align: center;
+    min-width: 110px;
+  }
+  .flight-point .time {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--fjord-deep);
+    line-height: 1.2;
+  }
+  .flight-point .time .plus-one {
+    font-size: 0.75rem;
+    color: var(--accent);
+    vertical-align: super;
+    font-weight: 700;
+  }
+  .flight-point .code {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--aurora-green);
+    letter-spacing: 0.1em;
+  }
+  .flight-point .airport {
+    font-size: 0.82rem;
+    color: var(--text-sub);
+  }
+  .flight-arrow {
+    flex: 1;
+    text-align: center;
+    color: var(--text-sub);
+    font-size: 0.82rem;
+    min-width: 130px;
+  }
+  .flight-arrow .line {
+    position: relative;
+    border-top: 2px dashed var(--cloud);
+    margin: 8px 10px;
+  }
+  .flight-arrow .line::after {
+    content: "✈";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--fjord-blue);
+    font-size: 1.2rem;
+    background: #fff;
+    padding: 0 6px;
+  }
+  .flight-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--cloud);
+  }
+  .tag {
+    background: var(--cloud);
+    color: var(--fjord-deep);
+    border-radius: 6px;
+    padding: 3px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .tag.finnair { background: #e3f2fd; color: #0b1560; }
+
+  /* ===== 乗り継ぎ ===== */
+  .layover {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0 12px 24px;
+    color: var(--text-sub);
+    font-size: 0.9rem;
+  }
+  .layover::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 40px;
+    background: repeating-linear-gradient(to bottom, var(--fjord-blue) 0 4px, transparent 4px 8px);
+    margin-right: 6px;
+  }
+  .layover strong { color: var(--fjord-blue); }
+
+  /* ===== サマリー ===== */
+  .summary {
+    margin: 14px 0;
+    background: linear-gradient(135deg, var(--aurora-light), #d3f3ee);
+    border-radius: 12px;
+    padding: 14px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+  .summary div { text-align: center; }
+  .summary .label { font-size: 0.78rem; color: var(--fjord-blue); font-weight: 600; }
+  .summary .value { font-size: 1.15rem; font-weight: 700; color: var(--fjord-deep); }
+
+  .note {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: var(--text-sub);
+  }
+
+  /* ===== ホテル・ツアー詳細（アコーディオン内） ===== */
+  .hotel-address {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    margin: 10px 0 12px;
+  }
+  .acc-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .acc-body th, .acc-body td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--cloud);
+    vertical-align: top;
+  }
+  .acc-body th {
+    color: var(--fjord-blue);
+    white-space: nowrap;
+    width: 9em;
+    font-weight: 600;
+  }
+  .acc-body tr:last-child th,
+  .acc-body tr:last-child td { border-bottom: none; }
+
+  /* ===== ルート図（ナットシェル） ===== */
+  .route-map {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 12px 0 6px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(27, 58, 92, 0.08);
+  }
+
+  /* ===== ルートステップ（ナットシェル） ===== */
+  .route-steps {
+    list-style: none;
+    margin: 14px 0;
+    padding: 0;
+  }
+  .route-steps li {
+    position: relative;
+    padding: 10px 0 10px 34px;
+    border-left: 3px solid var(--aurora-green);
+    margin-left: 12px;
+    font-size: 0.9rem;
+  }
+  .route-steps li::before {
+    content: attr(data-icon);
+    position: absolute;
+    left: -14px;
+    top: 10px;
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    border: 2px solid var(--aurora-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+  .route-steps li:last-child { border-left-color: transparent; }
+  .route-steps .rs-head {
+    font-weight: 700;
+    color: var(--fjord-deep);
+  }
+  .route-steps .rs-head .rs-time {
+    font-weight: 600;
+    color: var(--fjord-blue);
+    font-size: 0.82rem;
+    margin-left: 8px;
+  }
+  .route-steps .rs-desc {
+    font-size: 0.83rem;
+    color: var(--text-sub);
+  }
+
+  /* ===== 地図 ===== */
+  #trip-map {
+    display: block;
+    width: 100%;
+    height: 520px;
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(27, 58, 92, 0.12);
+  }
+  .map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: var(--text-sub);
+  }
+  .map-legend span { display: flex; align-items: center; gap: 6px; }
+  .legend-line {
+    display: inline-block;
+    width: 34px;
+    height: 0;
+    border-top: 3px solid var(--aurora-green);
+  }
+  .legend-line.flight { border-top: 3px solid var(--fjord-blue); }
+
+  /* ===== 単発予定 ===== */
+  .titem {
+    display: flex;
+    gap: 12px;
+    padding: 7px 4px;
+    font-size: 0.92rem;
+    align-items: baseline;
+  }
+  .titem .t-time {
+    min-width: 4.2em;
+    font-weight: 700;
+    color: var(--fjord-blue);
+    white-space: nowrap;
+    text-align: right;
+  }
+  .titem .t-body { flex: 1; }
+  .titem .t-sub { font-size: 0.8rem; color: var(--text-sub); }
+  .titem.aurora-item {
+    background: #f3eefc;
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin-top: 6px;
+  }
+
+  /* ===== 参考リンク（日程カード内） ===== */
+  .sub-links {
+    margin-top: 16px;
+    background: var(--snow);
+    border: 1px solid var(--cloud);
+    border-radius: 10px;
+    padding: 10px 16px;
+  }
+  .sub-links summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--fjord-deep);
+    list-style: none;
+  }
+  .sub-links summary::-webkit-details-marker { display: none; }
+  .sub-links summary::after { content: "▾"; margin-left: 8px; color: var(--text-sub); }
+  .sub-links[open] summary::after { content: "▴"; }
+  .sub-links ul { list-style: none; margin-top: 6px; }
+  .sub-links li {
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--cloud);
+    font-size: 0.88rem;
+  }
+  .sub-links li:last-child { border-bottom: none; }
+  .sub-links li.l-group {
+    font-weight: 700;
+    color: var(--fjord-blue);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-top: 6px;
+    font-size: 0.85rem;
+  }
+  .sub-links a {
+    color: var(--fjord-blue);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .sub-links a:hover { color: var(--aurora-green); text-decoration: underline; }
+  .sub-links .l-sub {
+    font-size: 0.78rem;
+    color: var(--text-sub);
+  }
+
+  /* ===== 準備中セクション ===== */
+  .coming-soon {
+    background: #fff;
+    border: 2px dashed var(--cloud);
+    border-radius: 14px;
+    padding: 32px;
+    text-align: center;
+    color: var(--text-sub);
+  }
+
+  footer {
+    background: var(--fjord-deep);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 24px;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 560px) {
+    header h1 { font-size: 1.6rem; }
+    .flight-route { flex-direction: column; }
+    .flight-arrow { width: 100%; }
+    .overview { font-size: 0.8rem; }
+    .day-header .day-stay { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🇳🇴 ノルウェー旅行ガイド</h1>
+  <p class="subtitle">2026年9月 — フィヨルドの国へ</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#map">🗺️ 地図</a></li>
+    <li><a href="#itinerary">🗓️ 旅程</a></li>
+    <li><a href="#info">ℹ️ 基本情報</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ===== 地図 ===== -->
+  <section id="map">
+    <h2>🗺️ 旅の地図</h2>
+    <iframe id="trip-map" src="https://www.google.com/maps/d/embed?mid=19D2XZofw_2M0bCLAG0YPPKKavlxujBs&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
+    <div class="map-legend">
+      <span><span class="legend-line"></span> 陸路（鉄道・バス・クルーズ）</span>
+      <span><span class="legend-line flight"></span> 国内線フライト</span>
+      <span>🔵 宿泊都市　🟣 オーロラ観測</span>
+      <span><a href="https://www.google.com/maps/d/viewer?mid=19D2XZofw_2M0bCLAG0YPPKKavlxujBs" target="_blank" rel="noopener">Google マップで開く ↗</a></span>
+    </div>
+  </section>
+
+  <!-- ===== 旅程 ===== -->
+  <section id="itinerary">
+    <h2>🗓️ 旅程</h2>
+
+    <!-- 全体早見表 -->
+    <table class="overview">
+      <thead>
+        <tr><th>日付</th><th>主な行程</th><th>宿泊</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ov-date"><a href="#d0916">9/16（水）</a></td>
+          <td>✈️ 22:50 中部（Nagoya）発（AY080）</td>
+          <td><span class="ov-stay">機中泊</span></td>
+        </tr>
+        <tr>
+          <td class="ov-date"><a href="#d0917">9/17（木）</a></td>
+          <td>✈️ ヘルシンキ（Helsinki）乗継 → 10:05 ベルゲン（Bergen）着・市内観光</td>
+          <td><span class="ov-stay">ベルゲン（Bergen）</span></td>
+        </tr>
+        <tr>
+          <td class="ov-date"><a href="#d0918">9/18（金）</a></td>
+          <td>🚂⛴️ ナットシェル®（Nutshell®・フィヨルド縦断）→ 22:27 オスロ（Oslo）着</td>
+          <td><span class="ov-stay">オスロ（Oslo）</span></td>
+        </tr>
+        <tr>
+          <td class="ov-date"><a href="#d0919">9/19（土）</a></td>
+          <td>✈️ 09:10 オスロ（Oslo）発 → トロムソ（Tromsø）　🌌 オーロラ①</td>
+          <td><span class="ov-stay aurora">トロムソ（Tromsø）</span></td>
+        </tr>
+        <tr>
+          <td class="ov-date"><a href="#d0920">9/20（日）</a></td>
+          <td>🚶 トロムソ（Tromsø）観光　🌌 オーロラ②</td>
+          <td><span class="ov-stay aurora">トロムソ（Tromsø）</span></td>
+        </tr>
+        <tr>
+          <td class="ov-date"><a href="#d0921">9/21（月）</a></td>
+          <td>✈️ 10:50 トロムソ（Tromsø）発 → オスロ（Oslo）・市内観光</td>
+          <td><span class="ov-stay">オスロ（Oslo）</span></td>
+        </tr>
+        <tr>
+          <td class="ov-date"><a href="#d0922">9/22（火）</a></td>
+          <td>✈️ 17:20 オスロ（Oslo）発 → ヘルシンキ（Helsinki）乗継</td>
+          <td><span class="ov-stay">機中泊</span></td>
+        </tr>
+        <tr>
+          <td class="ov-date"><a href="#d0923">9/23（水）</a></td>
+          <td>✈️ 00:45 ヘルシンキ（Helsinki）発 → 19:35 中部（Nagoya）着</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 9/16 -->
+    <div class="day-card" id="d0916">
+      <div class="day-header">
+        <span class="day-date">9/16（水）</span>
+        <span class="day-title">日本出発</span>
+        <span class="day-stay">泊：機内</span>
+      </div>
+      <div class="day-body">
+        <details class="acc flight">
+          <summary>
+            <span>✈️</span>
+            <span class="acc-time">22:50 → 翌05:55</span>
+            <span class="acc-title">AY080　中部（Nagoya）→ ヘルシンキ（Helsinki）</span>
+            <span class="acc-sub">Finnair・13時間05分</span>
+          </summary>
+          <div class="acc-body">
+            <div class="flight-route">
+              <div class="flight-point">
+                <div class="time">22:50</div>
+                <div class="code">NGO</div>
+                <div class="airport">中部国際空港<br>（ターミナル1）<br>Chubu Centrair</div>
+              </div>
+              <div class="flight-arrow">
+                <div>所要時間 13時間05分</div>
+                <div class="line"></div>
+                <div>AY080</div>
+              </div>
+              <div class="flight-point">
+                <div class="time">05:55<span class="plus-one">+1</span></div>
+                <div class="code">HEL</div>
+                <div class="airport">ヘルシンキ・<br>ヴァンター<br>Helsinki-Vantaa</div>
+              </div>
+            </div>
+            <div class="flight-meta">
+              <span class="tag finnair">Finnair（フィンエアー）</span>
+              <span class="tag">AY080</span>
+              <span class="tag">エコノミー</span>
+              <span class="tag">9/17（木）朝 到着</span>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- 9/17 -->
+    <div class="day-card" id="d0917">
+      <div class="day-header">
+        <span class="day-date">9/17（木）</span>
+        <span class="day-title">ベルゲン（Bergen）到着</span>
+        <span class="day-stay">泊：ベルゲン（Bergen）</span>
+      </div>
+      <div class="day-body">
+        <div class="layover">
+          🔄 05:55 ヘルシンキ（Helsinki）着　—　乗り継ぎ時間 <strong>2時間15分</strong>
+        </div>
+        <details class="acc flight">
+          <summary>
+            <span>✈️</span>
+            <span class="acc-time">08:10 → 10:05</span>
+            <span class="acc-title">AY805　ヘルシンキ（Helsinki）→ ベルゲン（Bergen）</span>
+            <span class="acc-sub">Finnair・2時間55分</span>
+          </summary>
+          <div class="acc-body">
+            <div class="flight-route">
+              <div class="flight-point">
+                <div class="time">08:10</div>
+                <div class="code">HEL</div>
+                <div class="airport">ヘルシンキ・ヴァンター<br>（ターミナル2）<br>Helsinki-Vantaa</div>
+              </div>
+              <div class="flight-arrow">
+                <div>所要時間 2時間55分</div>
+                <div class="line"></div>
+                <div>AY805</div>
+              </div>
+              <div class="flight-point">
+                <div class="time">10:05</div>
+                <div class="code">BGO</div>
+                <div class="airport">ベルゲン空港<br>（フレスラン）<br>Bergen Flesland</div>
+              </div>
+            </div>
+            <div class="flight-meta">
+              <span class="tag finnair">Finnair（フィンエアー）</span>
+              <span class="tag">AY805</span>
+              <span class="tag">エコノミー</span>
+            </div>
+            <div class="summary">
+              <div>
+                <div class="label">総移動時間</div>
+                <div class="value">約18時間15分</div>
+              </div>
+              <div>
+                <div class="label">時差（日本→ノルウェー）</div>
+                <div class="value">−7時間（夏時間）</div>
+              </div>
+            </div>
+          </div>
+        </details>
+        <div class="titem">
+          <span class="t-time">10:40頃</span>
+          <span class="t-body">🚌 エアポートバス FB50／FB51「Sentrum」行き（Flybussen）で市内へ — 約20〜25分・約10分間隔
+            <div class="t-sub">停車は4か所のみ：空港（A3のりば）→ オアシェン（Oasen）→ バスターミナル → フェストプラッセン（Festplassen）。終点フェストプラッセンで下車、スカンディック バイパルケンは徒歩1〜2分。チケットは乗車時にカード払い可</div>
+          </span>
+        </div>
+        <div class="titem">
+          <span class="t-time">午後</span>
+          <span class="t-body">🚶 ベルゲン（Bergen）観光（ブリッゲン地区 Bryggen、魚市場 Fisketorget、フロイエン山 Fløyen など）</span>
+        </div>
+        <details class="acc hotel">
+          <summary>
+            <span>🏨</span>
+            <span class="acc-time">IN 16:00</span>
+            <span class="acc-title">スカンディック バイパルケン（Scandic Byparken）</span>
+            <span class="acc-sub">ベルゲン（Bergen）・1泊・宿泊のみ</span>
+          </summary>
+          <div class="acc-body">
+            <div class="hotel-address">
+              📍 Christiesgate 5-7, Bergen, Norway　　☎ +47 55 54 56 00
+            </div>
+            <table>
+              <tr><th>チェックイン</th><td>2026年9月17日（木）16:00</td></tr>
+              <tr><th>チェックアウト</th><td>2026年9月18日（金）12:00</td></tr>
+              <tr><th>宿泊</th><td>1泊 1部屋</td></tr>
+              <tr><th>宿泊者数</th><td>大人4名</td></tr>
+              <tr><th>客室タイプ</th><td>ファミリー・ダブルルーム（キング1台、シングル3台、ソファベッド1台）</td></tr>
+              <tr><th>食事</th><td>宿泊のみ</td></tr>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- 9/18 -->
+    <div class="day-card" id="d0918">
+      <div class="day-header">
+        <span class="day-date">9/18（金）</span>
+        <span class="day-title">ノルウェー・イン・ア・ナットシェル®でオスロ（Oslo）へ</span>
+        <span class="day-stay">泊：オスロ（Oslo）</span>
+      </div>
+      <div class="day-body">
+        <details class="acc tour" open>
+          <summary>
+            <span>🚂</span>
+            <span class="acc-time">08:29 → 22:27</span>
+            <span class="acc-title">ノルウェー・イン・ア・ナットシェル®（Norway in a Nutshell®）</span>
+            <span class="acc-sub">全5区間確定・支払い済み</span>
+          </summary>
+          <div class="acc-body">
+            <div class="hotel-address">
+              🚂⛴️ ノルウェーの定番セルフガイドツアー。鉄道・バス・フィヨルドクルーズを乗り継ぎ、UNESCO世界遺産のネーロイフィヨルド（Nærøyfjord）と世界的名列車2路線を1日で巡りながらベルゲン（Bergen）からオスロ（Oslo）へ移動します（約14時間）。
+            </div>
+
+            <img class="route-map" src="nutshell-map.png" alt="ナットシェルのルート図：ベルゲン（Bergen）→ ヴォス（Voss）→ バスでグドヴァンゲン（Gudvangen）→ クルーズでフロム（Flåm）→ フロム鉄道でミュルダール（Myrdal）→ 鉄道でオスロ（Oslo）">
+
+            <ol class="route-steps">
+              <li data-icon="🚆">
+                <div class="rs-head">① ヴォス鉄道（The Voss Railway）　ベルゲン（Bergen）08:29 → ヴォス（Voss）09:41<span class="rs-time">✅ 確定・便コード 1848</span></div>
+                <div class="rs-desc">オスロ〜ベルゲンを結ぶベルゲン線の区間乗車。湖と山々を眺めながらヴォスへ。<br>
+                💺 指定席：<b>10号車　230・231・234・235</b>（Standard）<br>
+                🚉 途中駅：アルナ（Arna）→ トレンゲレイド（Trengereid）→ ヴァクスダール（Vaksdal）→ スタンゲッレ（Stanghelle）→ ダーレ（Dale）→ ボルスタドイリ（Bolstadøyri）→ エヴァンゲル（Evanger）→ ブルケン（Bulken）<br>
+                ※Bane NOR「Bergen–Voss–Myrdal（R40）」系統の停車駅。当日のダイヤは<a href="https://www.vy.no/en" target="_blank" rel="noopener">Vy公式</a>で確認できます</div>
+              </li>
+              <li data-icon="🚌">
+                <div class="rs-head">② ネーロイダーレン渓谷バス（Nærøydalen）　ヴォス（Voss）10:10 → グドヴァンゲン（Gudvangen）11:10<span class="rs-time">✅ 確定・便コード VG-1010・自由席</span></div>
+                <div class="rs-desc">ネーロイダーレン渓谷を下る絶景ルート。最大1,800mの断崖とスタルハイム（Stalheim）周辺のつづら折りの景観が見どころ。</div>
+              </li>
+              <li data-icon="⛴️">
+                <div class="rs-head">③ UNESCOネーロイフィヨルド・クルーズ（Nærøyfjord Cruise）　グドヴァンゲン（Gudvangen）12:10 → フロム（Flåm）14:10<span class="rs-time">✅ 確定・便コード NG-1210・自由席</span></div>
+                <div class="rs-desc">ツアー最大のハイライト。UNESCO世界遺産ネーロイフィヨルド（Nærøyfjord・ヨーロッパで最も狭いフィヨルド・最狭部約250m）からアウルランフィヨルド（Aurlandsfjord）へ。両岸に1,700m級の山々と滝、電動クルーズ船で静かに進みます。デッキは冷えるので防寒着を。<br>
+                ⏱️ グドヴァンゲンで約1時間の待ち時間（11:10着 → 12:10発）。</div>
+              </li>
+              <li data-icon="🚂">
+                <div class="rs-head">④ フロム鉄道（Flåmsbana）　フロム（Flåm）16:00 → ミュルダール（Myrdal）16:57<span class="rs-time">✅ 確定・便コード 1864・自由席</span></div>
+                <div class="rs-desc">世界で最も急勾配の普通鉄道のひとつ（20kmで標高差約866m）。フィヨルド、渓谷、滝、山岳農場を縫って登ります。途中ショースフォッセン（Kjosfossen）の滝で数分間の写真停車あり。<br>
+                ⏱️ フロムで約1時間50分の自由時間（14:10着 → 16:00発）— 昼食・村の散策・お土産のチャンス！</div>
+              </li>
+              <li data-icon="🚆">
+                <div class="rs-head">⑤ ベルゲン鉄道（The Bergen Railway）　ミュルダール（Myrdal）17:40 → オスロ（Oslo）22:27<span class="rs-time">✅ 確定・列車番号 64</span></div>
+                <div class="rs-desc">ヨーロッパ屈指の景勝路線。標高1,222mのフィンセ（Finse）駅（路線最高地点）を越え、ハルダンゲルヴィッダ（Hardangervidda）高原の荒涼とした風景から夜のオスロへ。車内にカフェワゴンあり。<br>
+                💺 指定席：<b>7号車　5・6・9・10</b>（Standard）<br>
+                ⏱️ ミュルダールで約43分の待ち時間（16:57着 → 17:40発）。</div>
+              </li>
+            </ol>
+
+            <table>
+              <tr><th>日付</th><td>2026年9月18日（金）</td></tr>
+              <tr><th>参加者</th><td>大人4名</td></tr>
+              <tr><th>支払い</th><td>✅ 支払い済み（2026年3月22日・Netaxept決済）— 現地払いなし</td></tr>
+              <tr><th>食事</th><td>ツアーに食事は含まれません。ヴォス（Voss）駅・クルーズ船内・フロム（Flåm）村・オスロ行き車内のカフェで購入可。フロムでの待ち時間が昼食〜おやつのチャンスです</td></tr>
+              <tr><th>メモ</th><td>・全区間予約確定済み（①〜⑤すべて確定時刻を記載）<br>
+                  ・スーツケースは各自持ち運び（乗り換え4回）。身軽な服装がおすすめ<br>
+                  ・9月中旬の山岳部・フィヨルドは冷えます。重ね着＋防風ジャケットを<br>
+                  ・チケットはスマホ提示でOK（紙のチケットへの交換は不要）<br>
+                  ・ヴォス（Voss）駅のバス乗り場はホーム直結。ナットシェル用バスが複数並ぶことがあるので「Gudvangen行きか」を運転手に確認<br>
+                  ・フロム鉄道は自由席。ショースフォッセン（Kjosfossen）の滝が見える側の席が人気なので早めに並ぶのがおすすめ<br>
+                  ・万一の列車トラブル時は「ベルゲン（Bergen）→フロム（Flåm）の高速船」という代替ルートあり（体験談より）</td></tr>
+            </table>
+
+            <details class="sub-links">
+              <summary>📖 参考リンク集（体験談・公式サイト）</summary>
+              <ul>
+                <li class="l-group">▼ ベルゲン → オスロ方向（今回と同じ向き）</li>
+                <li>
+                  <a href="https://4travel.jp/travelogue/11874178" target="_blank" rel="noopener">【北欧周遊1人旅9】ナットシェル・ソグネフィヨルドツアー前編：ベルゲン〜フロム（yunyunさん）</a>
+                  <div class="l-sub">2023年5月。チケットPDFのオフライン保存が役立ったなど実用的</div>
+                </li>
+                <li>
+                  <a href="https://4travel.jp/travelogue/11874213" target="_blank" rel="noopener">【北欧周遊1人旅10】ソグネフィヨルドツアー後編：フロム鉄道でフロム〜オスロ（yunyunさん）</a>
+                  <div class="l-sub">「世界一美しい車窓」フロム鉄道とオスロまでのベルゲン鉄道</div>
+                </li>
+                <li>
+                  <a href="https://4travel.jp/travelogue/11928544" target="_blank" rel="noopener">ノルウェー女子ひとり旅【フィヨルドへ】念願の鉄道、フィヨルドツアー編②（koko sanさん）</a>
+                  <div class="l-sub">7月・ベルゲン発→オスロ着。グドヴァンゲンの待ち時間、スタルハイム休憩などの記録</div>
+                </li>
+                <li>
+                  <a href="https://4travel.jp/travelogue/11256875" target="_blank" rel="noopener">ベルゲンからオスロへ：列車トラブルでフロムまで高速船に（Takashiさん）</a>
+                  <div class="l-sub">列車不通時に高速船で迂回した貴重な記録。フロム鉄道の座席の向きのヒントも</div>
+                </li>
+                <li class="l-group">▼ オスロ → ベルゲン方向（行程の参考に）</li>
+                <li>
+                  <a href="https://4travel.jp/travelogue/11987786" target="_blank" rel="noopener">2025初夏の北欧(2) オスロからソグネフィヨルド経由ベルゲン（菊花さん）</a>
+                  <div class="l-sub">2025年の新しい旅行記</div>
+                </li>
+                <li>
+                  <a href="https://4travel.jp/travelogue/10903915" target="_blank" rel="noopener">ノルウェー4日目：オスロ→ベルゲン ナットシェル（Lazy Butlerさん）</a>
+                  <div class="l-sub">各乗り換えの様子が詳しい定番記事</div>
+                </li>
+                <li>
+                  <a href="https://4travel.jp/travelogue/11841091" target="_blank" rel="noopener">ベルゲン急行とフロム鉄道で、オスロからフロム・ベルゲンへ（ムーミン３さん）</a>
+                </li>
+                <li class="l-group">▼ 在住者ガイド・レビュー</li>
+                <li>
+                  <a href="https://moca-life.com/nutshellfjordtour1" target="_blank" rel="noopener">ナットシェル夏のソグネフィヨルドツアー体験記・前編（もかのノルウェー生活ブログ）</a>
+                  <div class="l-sub">在住者による実用ガイド。Eチケットのスマホ提示、ヴォスのバス乗り場の注意点など</div>
+                </li>
+                <li>
+                  <a href="https://moca-life.com/nutshellfjordtour2" target="_blank" rel="noopener">ナットシェル夏のソグネフィヨルドツアー体験記・後編（もかのノルウェー生活ブログ）</a>
+                  <div class="l-sub">クルーズ〜フロム〜フロム鉄道区間の続編</div>
+                </li>
+                <li>
+                  <a href="https://www.veltra.com/jp/europe/norway/a/19189/reviews" target="_blank" rel="noopener">VELTRA ナットシェル周遊チケット 参加者の体験談・口コミ集</a>
+                  <div class="l-sub">多数の日本人参加者のレビュー</div>
+                </li>
+                <li class="l-group">▼ 公式サイト</li>
+                <li>
+                  <a href="https://www.fjordtours.com/en/norway/tours/norway-in-a-nutshell" target="_blank" rel="noopener">Norway in a Nutshell®（Fjord Tours 公式）</a>
+                  <div class="l-sub">ツアー公式ページ（英語）</div>
+                </li>
+              </ul>
+            </details>
+          </div>
+        </details>
+        <details class="acc hotel">
+          <summary>
+            <span>🏨</span>
+            <span class="acc-time">IN 15:00</span>
+            <span class="acc-title">コンフォートホテル・ボースパーケン（Comfort Hotel Børsparken）</span>
+            <span class="acc-sub">オスロ（Oslo）・1泊・朝食付き（到着は23時頃）</span>
+          </summary>
+          <div class="acc-body">
+            <div class="hotel-address">
+              📍 Tollbugata 4, Oslo, Norway　　☎ +47 22 47 17 17　　🚉 オスロ中央駅から徒歩約5分
+            </div>
+            <table>
+              <tr><th>チェックイン</th><td>2026年9月18日（金）15:00〜（オスロ着22:27のため到着は23時頃）</td></tr>
+              <tr><th>チェックアウト</th><td>2026年9月19日（土）11:00</td></tr>
+              <tr><th>宿泊</th><td>1泊 1部屋</td></tr>
+              <tr><th>宿泊者数</th><td>大人4名</td></tr>
+              <tr><th>客室タイプ</th><td>ファミリー4人部屋（クイーン1台、ソファベッド）</td></tr>
+              <tr><th>食事</th><td>朝食付き</td></tr>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- 9/19 -->
+    <div class="day-card" id="d0919">
+      <div class="day-header">
+        <span class="day-date">9/19（土）</span>
+        <span class="day-title">トロムソ（Tromsø）へ・オーロラ観測1夜目</span>
+        <span class="day-stay">泊：トロムソ（Tromsø）</span>
+      </div>
+      <div class="day-body">
+        <div class="titem">
+          <span class="t-time">早朝</span>
+          <span class="t-body">🏨 チェックアウト（ボースパーケン / Børsparken）→ オスロ・ガーデモエン空港（Oslo Gardermoen）へ（搭乗手続き08:30まで）</span>
+        </div>
+        <details class="acc flight">
+          <summary>
+            <span>✈️</span>
+            <span class="acc-time">09:10 → 11:00</span>
+            <span class="acc-title">SK 4412　オスロ（Oslo）→ トロムソ（Tromsø）</span>
+            <span class="acc-sub">SAS・1時間50分</span>
+          </summary>
+          <div class="acc-body">
+            <div class="flight-route">
+              <div class="flight-point">
+                <div class="time">09:10</div>
+                <div class="code">OSL</div>
+                <div class="airport">オスロ空港<br>（ガーデモエン）<br>Oslo Gardermoen</div>
+              </div>
+              <div class="flight-arrow">
+                <div>所要時間 1時間50分</div>
+                <div class="line"></div>
+                <div>SK 4412</div>
+              </div>
+              <div class="flight-point">
+                <div class="time">11:00</div>
+                <div class="code">TOS</div>
+                <div class="airport">トロムソ空港<br>Tromsø Langnes</div>
+              </div>
+            </div>
+            <div class="flight-meta">
+              <span class="tag">スカンジナビア航空（SAS / Scandinavian Airlines）</span>
+              <span class="tag">SK 4412</span>
+              <span class="tag">搭乗手続き 08:30</span>
+              <span class="tag">機内販売あり（軽食は有料）</span>
+            </div>
+          </div>
+        </details>
+        <details class="acc hotel">
+          <summary>
+            <span>🏨</span>
+            <span class="acc-time">IN 15:00</span>
+            <span class="acc-title">クオリティ ホテル サガ（Quality Hotel Saga）</span>
+            <span class="acc-sub">トロムソ（Tromsø）・2泊・宿泊のみ</span>
+          </summary>
+          <div class="acc-body">
+            <div class="hotel-address">
+              📍 Rich Withs Pl. 2, Tromsø, Norway　　☎ +47 77 60 70 00
+            </div>
+            <table>
+              <tr><th>チェックイン</th><td>2026年9月19日（土）15:00</td></tr>
+              <tr><th>チェックアウト</th><td>2026年9月21日（月）12:00</td></tr>
+              <tr><th>宿泊</th><td>2泊 1部屋</td></tr>
+              <tr><th>宿泊者数</th><td>大人4名</td></tr>
+              <tr><th>客室タイプ</th><td>ファミリールーム・禁煙（シングルまたはセミダブル2台、二段ベッド1台）</td></tr>
+              <tr><th>食事</th><td>宿泊のみ</td></tr>
+            </table>
+          </div>
+        </details>
+        <details class="acc tour">
+          <summary>
+            <span>🌌</span>
+            <span class="acc-time">夜</span>
+            <span class="acc-title">オーロラ・ミニバスチェイス（1回目）</span>
+            <span class="acc-sub">Northern Lights Minibus Chase</span>
+          </summary>
+          <div class="acc-body">
+            <div class="hotel-address">
+              🌌 ミニバスでオーロラを追いかける夜のツアー（9/19・9/20の2回参加）
+            </div>
+            <table>
+              <tr><th>日付</th><td>2026年9月19日（土）・9月20日（日）の2夜</td></tr>
+              <tr><th>参加者</th><td>大人4名</td></tr>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- 9/20 -->
+    <div class="day-card" id="d0920">
+      <div class="day-header">
+        <span class="day-date">9/20（日）</span>
+        <span class="day-title">トロムソ（Tromsø）観光・オーロラ観測2夜目</span>
+        <span class="day-stay">泊：トロムソ（Tromsø）</span>
+      </div>
+      <div class="day-body">
+        <div class="titem">
+          <span class="t-time">日中</span>
+          <span class="t-body">🚶 トロムソ（Tromsø）自由行動（北極教会 Ishavskatedralen、ケーブルカー・フィエルハイセン Fjellheisen など）</span>
+        </div>
+        <div class="titem aurora-item">
+          <span class="t-time">夜</span>
+          <span class="t-body">🌌 <b>オーロラ・ミニバスチェイス</b>（2回目）
+            <div class="t-sub">Northern Lights Minibus Chase・大人4名</div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9/21 -->
+    <div class="day-card" id="d0921">
+      <div class="day-header">
+        <span class="day-date">9/21（月）</span>
+        <span class="day-title">オスロ（Oslo）へ戻る</span>
+        <span class="day-stay">泊：オスロ（Oslo）</span>
+      </div>
+      <div class="day-body">
+        <div class="titem">
+          <span class="t-time">朝</span>
+          <span class="t-body">🏨 チェックアウト（クオリティ ホテル サガ / Quality Hotel Saga）→ トロムソ空港（Tromsø Langnes）へ（搭乗手続き10:10まで）</span>
+        </div>
+        <details class="acc flight">
+          <summary>
+            <span>✈️</span>
+            <span class="acc-time">10:50 → 12:45</span>
+            <span class="acc-title">SK 4411　トロムソ（Tromsø）→ オスロ（Oslo）</span>
+            <span class="acc-sub">SAS・1時間55分</span>
+          </summary>
+          <div class="acc-body">
+            <div class="flight-route">
+              <div class="flight-point">
+                <div class="time">10:50</div>
+                <div class="code">TOS</div>
+                <div class="airport">トロムソ空港<br>Tromsø Langnes</div>
+              </div>
+              <div class="flight-arrow">
+                <div>所要時間 1時間55分</div>
+                <div class="line"></div>
+                <div>SK 4411</div>
+              </div>
+              <div class="flight-point">
+                <div class="time">12:45</div>
+                <div class="code">OSL</div>
+                <div class="airport">オスロ空港<br>（ガーデモエン）<br>Oslo Gardermoen</div>
+              </div>
+            </div>
+            <div class="flight-meta">
+              <span class="tag">スカンジナビア航空（SAS / Scandinavian Airlines）</span>
+              <span class="tag">SK 4411</span>
+              <span class="tag">搭乗手続き 10:10</span>
+              <span class="tag">機内販売あり（軽食は有料）</span>
+            </div>
+          </div>
+        </details>
+        <div class="titem">
+          <span class="t-time">午後</span>
+          <span class="t-body">🚶 オスロ（Oslo）観光（オペラハウス Operahuset、カールヨハン通り Karl Johans gate など）</span>
+        </div>
+        <details class="acc hotel">
+          <summary>
+            <span>🏨</span>
+            <span class="acc-time">IN 15:00</span>
+            <span class="acc-title">コンフォート ホテル グランド セントラル（Comfort Hotel Grand Central）</span>
+            <span class="acc-sub">オスロ中央駅（Oslo S）駅舎内・1泊・朝食付き</span>
+          </summary>
+          <div class="acc-body">
+            <div class="hotel-address">
+              📍 Jernbanetorget 1, Østbanehallen, Oslo, Norway（オスロ中央駅舎内）　　☎ +47 22 98 28 00
+            </div>
+            <table>
+              <tr><th>チェックイン</th><td>2026年9月21日（月）15:00</td></tr>
+              <tr><th>チェックアウト</th><td>2026年9月22日（火）12:00</td></tr>
+              <tr><th>宿泊</th><td>1泊 1部屋</td></tr>
+              <tr><th>宿泊者数</th><td>大人4名</td></tr>
+              <tr><th>客室タイプ</th><td>ファミリールーム（ダブル1台、ソファベッド1台）</td></tr>
+              <tr><th>食事</th><td>朝食付き</td></tr>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- 9/22 -->
+    <div class="day-card" id="d0922">
+      <div class="day-header">
+        <span class="day-date">9/22（火）</span>
+        <span class="day-title">帰国の途へ</span>
+        <span class="day-stay">泊：機内</span>
+      </div>
+      <div class="day-body">
+        <div class="titem">
+          <span class="t-time">〜12:00</span>
+          <span class="t-body">🏨 チェックアウト（グランド セントラル / Grand Central）— 午前中はオスロ（Oslo）観光可</span>
+        </div>
+        <details class="acc flight">
+          <summary>
+            <span>✈️</span>
+            <span class="acc-time">17:20 → 19:45</span>
+            <span class="acc-title">AY916　オスロ（Oslo）→ ヘルシンキ（Helsinki）</span>
+            <span class="acc-sub">Nordic Reg for Finnair・1時間25分</span>
+          </summary>
+          <div class="acc-body">
+            <div class="flight-route">
+              <div class="flight-point">
+                <div class="time">17:20</div>
+                <div class="code">OSL</div>
+                <div class="airport">オスロ空港<br>（ガーデモエン）<br>Oslo Gardermoen</div>
+              </div>
+              <div class="flight-arrow">
+                <div>所要時間 1時間25分</div>
+                <div class="line"></div>
+                <div>AY916</div>
+              </div>
+              <div class="flight-point">
+                <div class="time">19:45</div>
+                <div class="code">HEL</div>
+                <div class="airport">ヘルシンキ・<br>ヴァンター<br>Helsinki-Vantaa</div>
+              </div>
+            </div>
+            <div class="flight-meta">
+              <span class="tag finnair">Nordic Reg for Finnair</span>
+              <span class="tag">AY916</span>
+              <span class="tag">エコノミー</span>
+            </div>
+          </div>
+        </details>
+        <div class="layover">
+          🔄 ヘルシンキ（Helsinki）で乗り換え　—　乗り継ぎ時間 <strong>5時間0分</strong>（日付が変わって9/23発）
+        </div>
+      </div>
+    </div>
+
+    <!-- 9/23 -->
+    <div class="day-card" id="d0923">
+      <div class="day-header">
+        <span class="day-date">9/23（水）</span>
+        <span class="day-title">日本帰着</span>
+        <span class="day-stay">19:35 中部（Nagoya）着</span>
+      </div>
+      <div class="day-body">
+        <details class="acc flight">
+          <summary>
+            <span>✈️</span>
+            <span class="acc-time">00:45 → 19:35</span>
+            <span class="acc-title">AY079　ヘルシンキ（Helsinki）→ 中部（Nagoya）</span>
+            <span class="acc-sub">Finnair・12時間50分</span>
+          </summary>
+          <div class="acc-body">
+            <div class="flight-route">
+              <div class="flight-point">
+                <div class="time">00:45</div>
+                <div class="code">HEL</div>
+                <div class="airport">ヘルシンキ・ヴァンター<br>Helsinki-Vantaa<br>（9/23 深夜発）</div>
+              </div>
+              <div class="flight-arrow">
+                <div>所要時間 12時間50分</div>
+                <div class="line"></div>
+                <div>AY079</div>
+              </div>
+              <div class="flight-point">
+                <div class="time">19:35</div>
+                <div class="code">NGO</div>
+                <div class="airport">中部国際空港<br>（ターミナル1）<br>Chubu Centrair</div>
+              </div>
+            </div>
+            <div class="flight-meta">
+              <span class="tag finnair">Finnair（フィンエアー）</span>
+              <span class="tag">AY079</span>
+              <span class="tag">エコノミー</span>
+              <span class="tag">9/23（水）夜 到着</span>
+            </div>
+            <div class="summary">
+              <div>
+                <div class="label">総移動時間</div>
+                <div class="value">約19時間15分</div>
+              </div>
+              <div>
+                <div class="label">中部（Nagoya）到着</div>
+                <div class="value">9/23（水）19:35</div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <p class="note">
+      ※ 所要時間は現地時刻と時差（日本 UTC+9／フィンランド夏時間 UTC+3／ノルウェー夏時間 UTC+2）から算出。<br>
+      ※ 「+1」は翌日到着を表します。各カードはクリック／タップで詳細が開きます。
+    </p>
+  </section>
+
+  <!-- ===== 基本情報（準備中） ===== -->
+  <section id="info">
+    <h2>ℹ️ 基本情報</h2>
+    <div class="coming-soon">通貨・気候・持ち物などの情報は準備中です。</div>
+  </section>
+
+</main>
+
+<footer>
+  Norway Trip 2026 — Travel Guide
+</footer>
+
+</body>
+</html>
