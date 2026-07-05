@@ -606,7 +606,7 @@
     <h2>🗺️ 旅の地図</h2>
 
     <div class="map-row">
-      <svg class="viking-fig" viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="地図を指さすバイキングのキャラクター">
+      <svg class="viking-fig" viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="地図を指さすノルウェーのバイキングのキャラクター">
         <!-- 吹き出し -->
         <g>
           <rect x="24" y="6" width="168" height="40" rx="20" fill="#fff" stroke="#e8eef4" stroke-width="2"/>
@@ -616,52 +616,95 @@
         </g>
 
         <!-- 影 -->
-        <ellipse cx="102" cy="236" rx="56" ry="9" fill="#e8eef4"/>
+        <ellipse cx="102" cy="246" rx="58" ry="9" fill="#e8eef4"/>
 
         <!-- 右腕（指さし・右へ） -->
-        <path d="M128,150 C146,148 162,145 176,142" stroke="#2c5f8a" stroke-width="16" fill="none" stroke-linecap="round"/>
-        <circle cx="180" cy="141" r="10" fill="#ffd9b8"/>
-        <path d="M184,140 L206,136" stroke="#ffd9b8" stroke-width="8" stroke-linecap="round"/>
+        <path d="M128,158 C146,156 162,152 176,148" stroke="#c1272d" stroke-width="16" fill="none" stroke-linecap="round"/>
+        <rect x="120" y="150" width="18" height="18" fill="#fff"/>
+        <circle cx="180" cy="147" r="10" fill="#ffd9b8"/>
+        <path d="M184,146 L207,141" stroke="#ffd9b8" stroke-width="8" stroke-linecap="round"/>
 
-        <!-- 体（チュニック） -->
-        <path d="M68,142 L136,142 L146,208 L58,208 Z" fill="#2c5f8a"/>
-        <rect x="58" y="196" width="88" height="14" rx="7" fill="#e8eef4"/>
-        <rect x="64" y="166" width="76" height="10" rx="5" fill="#7a4b2a"/>
-        <rect x="92" y="164" width="20" height="14" rx="3" fill="#f4c542"/>
+        <!-- 体（ノルディックセーター） -->
+        <path d="M66,150 L138,150 L148,216 L56,216 Z" fill="#0a2a54"/>
+        <!-- 雪の結晶模様の帯 -->
+        <g fill="#f7fafc">
+          <path d="M78,168 l4,0 l0,-4 l3,0 l0,4 l4,0 l0,3 l-4,0 l0,4 l-3,0 l0,-4 l-4,0 Z"/>
+          <path d="M100,168 l4,0 l0,-4 l3,0 l0,4 l4,0 l0,3 l-4,0 l0,4 l-3,0 l0,-4 l-4,0 Z"/>
+          <path d="M122,168 l4,0 l0,-4 l3,0 l0,4 l4,0 l0,3 l-4,0 l0,4 l-3,0 l0,-4 l-4,0 Z"/>
+        </g>
+        <g stroke="#f7fafc" stroke-width="2.5" fill="none">
+          <path d="M60,182 l6,-5 l6,5 l6,-5 l6,5 l6,-5 l6,5 l6,-5 l6,5 l6,-5 l6,5 l6,-5 l6,5 l6,-5"/>
+        </g>
+        <rect x="60" y="188" width="84" height="9" rx="4" fill="#c1272d"/>
+        <rect x="62" y="200" width="80" height="10" rx="5" fill="#7a4b2a"/>
+        <rect x="92" y="198" width="20" height="14" rx="3" fill="#f4c542"/>
 
         <!-- 左腕（盾を持つ） -->
-        <path d="M74,150 C60,156 52,164 48,172" stroke="#2c5f8a" stroke-width="16" fill="none" stroke-linecap="round"/>
-        <circle cx="44" cy="176" r="20" fill="#e0355f" stroke="#b02545" stroke-width="3"/>
-        <circle cx="44" cy="176" r="7" fill="#f4c542"/>
+        <path d="M72,158 C58,164 50,172 46,180" stroke="#0a2a54" stroke-width="16" fill="none" stroke-linecap="round"/>
+        <!-- ノース文様の丸盾 -->
+        <circle cx="42" cy="184" r="22" fill="#c85a2a" stroke="#7a4b2a" stroke-width="3"/>
+        <circle cx="42" cy="184" r="22" fill="none" stroke="#3a2a1a" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <g stroke="#3a2a1a" stroke-width="2.5">
+          <line x1="42" y1="164" x2="42" y2="204"/>
+          <line x1="22" y1="184" x2="62" y2="184"/>
+          <line x1="28" y1="170" x2="56" y2="198"/>
+          <line x1="56" y1="170" x2="28" y2="198"/>
+        </g>
+        <circle cx="42" cy="184" r="6" fill="#f4c542" stroke="#7a4b2a" stroke-width="2"/>
 
         <!-- 脚・ブーツ -->
-        <rect x="76" y="206" width="16" height="20" rx="6" fill="#5a4632"/>
-        <rect x="112" y="206" width="16" height="20" rx="6" fill="#5a4632"/>
-        <rect x="72" y="222" width="24" height="12" rx="6" fill="#7a4b2a"/>
-        <rect x="108" y="222" width="24" height="12" rx="6" fill="#7a4b2a"/>
+        <rect x="76" y="214" width="16" height="20" rx="6" fill="#3a2a1a"/>
+        <rect x="112" y="214" width="16" height="20" rx="6" fill="#3a2a1a"/>
+        <rect x="72" y="230" width="24" height="12" rx="6" fill="#5a4632"/>
+        <rect x="108" y="230" width="24" height="12" rx="6" fill="#5a4632"/>
 
-        <!-- ひげ -->
-        <path d="M72,118 C70,150 84,160 102,160 C120,160 134,150 132,118 C120,128 84,128 72,118 Z" fill="#e58a3a"/>
+        <!-- ひげ（三つ編み・ビーズ付き） -->
+        <path d="M72,116 C70,150 84,164 102,164 C120,164 134,150 132,116 C120,126 84,126 72,116 Z" fill="#e0a54a"/>
+        <g>
+          <path d="M90,158 q-3,10 -1,20" stroke="#c98a2e" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <circle cx="89" cy="180" r="4" fill="#c1272d"/>
+          <path d="M114,158 q3,10 1,20" stroke="#c98a2e" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <circle cx="116" cy="180" r="4" fill="#0a2a54"/>
+        </g>
+        <!-- 口ひげ -->
+        <path d="M84,118 Q102,112 120,118" stroke="#c98a2e" stroke-width="6" fill="none" stroke-linecap="round"/>
 
         <!-- 顔 -->
-        <circle cx="102" cy="106" r="38" fill="#ffd9b8"/>
+        <circle cx="102" cy="104" r="38" fill="#ffd9b8"/>
         <circle cx="88" cy="102" r="5" fill="#2d3748"/>
         <circle cx="116" cy="102" r="5" fill="#2d3748"/>
         <circle cx="90" cy="100" r="1.8" fill="#fff"/>
         <circle cx="118" cy="100" r="1.8" fill="#fff"/>
         <ellipse cx="80" cy="114" rx="7" ry="4.5" fill="#ffb3a0"/>
         <ellipse cx="124" cy="114" rx="7" ry="4.5" fill="#ffb3a0"/>
-        <path d="M94,120 Q102,128 110,120" stroke="#c96f4a" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+        <!-- 三つ編みの髪（サイド） -->
+        <path d="M66,96 q-8,24 -4,44" stroke="#e0a54a" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <circle cx="62" cy="142" r="4" fill="#c1272d"/>
+        <path d="M138,96 q8,24 4,44" stroke="#e0a54a" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <circle cx="142" cy="142" r="4" fill="#0a2a54"/>
 
         <!-- ヘルメット -->
-        <path d="M64,96 C64,68 82,54 102,54 C122,54 140,68 140,96 Z" fill="#b8c4cf"/>
-        <rect x="60" y="90" width="84" height="12" rx="6" fill="#93a1ad"/>
-        <circle cx="72" cy="96" r="2.5" fill="#e8eef4"/>
-        <circle cx="102" cy="96" r="2.5" fill="#e8eef4"/>
-        <circle cx="132" cy="96" r="2.5" fill="#e8eef4"/>
+        <path d="M64,94 C64,66 82,52 102,52 C122,52 140,66 140,94 Z" fill="#c0ccd6"/>
+        <path d="M102,52 L102,94 L64,94 C64,66 82,52 102,52 Z" fill="#aab8c4"/>
+        <rect x="60" y="88" width="84" height="12" rx="6" fill="#8a99a6"/>
+        <line x1="102" y1="56" x2="102" y2="88" stroke="#8a99a6" stroke-width="4"/>
+        <circle cx="72" cy="94" r="2.5" fill="#e8eef4"/>
+        <circle cx="102" cy="94" r="2.5" fill="#e8eef4"/>
+        <circle cx="132" cy="94" r="2.5" fill="#e8eef4"/>
         <!-- 角 -->
-        <path d="M64,84 C48,80 40,66 42,50 C54,58 62,66 68,76 Z" fill="#f5ead9" stroke="#d9c9a8" stroke-width="2"/>
-        <path d="M140,84 C156,80 164,66 162,50 C150,58 142,66 136,76 Z" fill="#f5ead9" stroke="#d9c9a8" stroke-width="2"/>
+        <path d="M64,82 C48,78 40,64 42,48 C54,56 62,64 68,74 Z" fill="#f5ead9" stroke="#d9c9a8" stroke-width="2"/>
+        <path d="M140,82 C156,78 164,64 162,48 C150,56 142,64 136,74 Z" fill="#f5ead9" stroke="#d9c9a8" stroke-width="2"/>
+
+        <!-- ノルウェー国旗（小旗） -->
+        <line x1="158" y1="40" x2="158" y2="96" stroke="#7a4b2a" stroke-width="3"/>
+        <g>
+          <rect x="158" y="40" width="40" height="28" fill="#c1272d"/>
+          <rect x="170" y="40" width="8" height="28" fill="#fff"/>
+          <rect x="158" y="50" width="40" height="8" fill="#fff"/>
+          <rect x="172" y="40" width="4" height="28" fill="#00205b"/>
+          <rect x="158" y="52" width="40" height="4" fill="#00205b"/>
+        </g>
       </svg>
 
       <a class="map-icon-link" href="https://www.google.com/maps/d/viewer?mid=19D2XZofw_2M0bCLAG0YPPKKavlxujBs" target="_blank" rel="noopener">
