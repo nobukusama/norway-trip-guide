@@ -441,13 +441,29 @@
   }
 
   /* ===== 地図 ===== */
-  #trip-map {
+  .map-link {
     display: block;
-    width: 100%;
-    height: 520px;
-    border: 0;
+    background: linear-gradient(135deg, var(--fjord-deep), var(--fjord-blue));
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 26px 20px;
     border-radius: 14px;
-    box-shadow: 0 4px 16px rgba(27, 58, 92, 0.12);
+    box-shadow: 0 4px 16px rgba(27, 58, 92, 0.18);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .map-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(27, 58, 92, 0.28);
+  }
+  .map-link-sub {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.82rem;
+    font-weight: 400;
+    opacity: 0.85;
   }
   .map-legend {
     display: flex;
@@ -581,12 +597,14 @@
   <!-- ===== 地図 ===== -->
   <section id="map">
     <h2>🗺️ 旅の地図</h2>
-    <iframe id="trip-map" src="https://www.google.com/maps/d/embed?mid=19D2XZofw_2M0bCLAG0YPPKKavlxujBs&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
+    <a class="map-link" href="https://www.google.com/maps/d/viewer?mid=19D2XZofw_2M0bCLAG0YPPKKavlxujBs" target="_blank" rel="noopener">
+      🗺️ Google マップで旅の地図を開く ↗
+      <span class="map-link-sub">全行程・ナットシェル詳細ルート・ホテル・空港バス入り（Google マップアプリでそのまま使えます）</span>
+    </a>
     <div class="map-legend">
       <span><span class="legend-line"></span> 陸路（鉄道・バス・クルーズ）</span>
-      <span><span class="legend-line flight"></span> 国内線フライト</span>
-      <span>🔵 宿泊都市　🟣 オーロラ観測</span>
-      <span><a href="https://www.google.com/maps/d/viewer?mid=19D2XZofw_2M0bCLAG0YPPKKavlxujBs" target="_blank" rel="noopener">Google マップで開く ↗</a></span>
+      <span><span class="legend-line flight"></span> 空港アクセス（バス・特急）</span>
+      <span>✈️ フライトは点線　🏨 ホテル　🚉 駅・バス停</span>
     </div>
   </section>
 
