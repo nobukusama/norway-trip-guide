@@ -441,18 +441,20 @@
   }
 
   /* ===== 地図 ===== */
-  .trip-fig {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: 14px;
-    border-radius: 14px;
-    box-shadow: 0 4px 16px rgba(27, 58, 92, 0.12);
-    transition: transform 0.15s, box-shadow 0.15s;
+  .map-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
-  .trip-fig:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(27, 58, 92, 0.2);
+  .map-row .map-link { flex: 1; }
+  .viking-fig {
+    width: 180px;
+    height: auto;
+    flex-shrink: 0;
+  }
+  @media (max-width: 560px) {
+    .map-row { flex-direction: column-reverse; }
+    .viking-fig { width: 140px; }
   }
   .map-link {
     display: block;
@@ -595,78 +597,69 @@
   <section id="map">
     <h2>🗺️ 旅の地図</h2>
 
-    <a href="https://www.google.com/maps/d/viewer?mid=19D2XZofw_2M0bCLAG0YPPKKavlxujBs" target="_blank" rel="noopener">
-      <svg class="trip-fig" viewBox="0 0 740 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="旅の全体ルート図">
-        <!-- 背景 -->
-        <rect x="0" y="0" width="740" height="560" rx="14" fill="#fbecea"/>
-
-        <!-- フィヨルド（西海岸の水域） -->
-        <g stroke="#bfe4ea" fill="none" stroke-linecap="round">
-          <path d="M20,420 L70,430 L95,415 M70,430 L80,460 M10,470 L60,480 M30,520 L85,515" stroke-width="11"/>
-          <path d="M60,360 L110,375 L140,360 M110,375 L120,405 M90,300 L140,320 L170,305" stroke-width="9"/>
-          <path d="M420,120 L470,130 L495,115 M470,130 L480,160 M500,60 L550,75 L575,60 M550,75 L558,105" stroke-width="9"/>
-          <path d="M600,130 L650,140 L680,125 M650,140 L658,170" stroke-width="8"/>
-        </g>
-
-        <!-- オーロラの光（トロムソ上空） -->
-        <ellipse cx="592" cy="38" rx="120" ry="22" fill="#a8e6cf" opacity="0.5"/>
-        <ellipse cx="620" cy="24" rx="90" ry="14" fill="#c9b8ec" opacity="0.5"/>
-
-        <!-- 国際線（出入り・点線） -->
-        <g stroke="#2c5f8a" stroke-width="3" stroke-dasharray="2 9" fill="none" stroke-linecap="round">
-          <path d="M30,545 C55,515 78,492 101,467"/>
-          <path d="M297,488 C340,515 390,538 440,552"/>
-        </g>
-        <text x="18" y="536" font-size="12" fill="#64748b">✈️ 中部→ヘルシンキ→</text>
-        <text x="420" y="533" font-size="12" fill="#64748b">→ヘルシンキ→中部 ✈️</text>
-
-        <!-- ナットシェル陸路：ベルゲン → フィヨルド → オスロ（線路風） -->
-        <g fill="none">
-          <path d="M101,467 C120,448 135,437 155,430 C200,415 250,455 297,488" stroke="#4ecdc4" stroke-width="8"/>
-          <path d="M101,467 C120,448 135,437 155,430 C200,415 250,455 297,488" stroke="#fbecea" stroke-width="4" stroke-dasharray="3 6"/>
-        </g>
-
-        <!-- 国内線：オスロ ⇄ トロムソ（点線） -->
-        <path d="M297,488 C430,330 520,180 592,59" stroke="#2c5f8a" stroke-width="3.5" stroke-dasharray="2 10" fill="none" stroke-linecap="round"/>
-        <text x="435" y="280" font-size="26">✈️</text>
-        <text x="462" y="296" font-size="11" fill="#64748b">SK 4412 / 4411</text>
-
-        <!-- アイコン -->
-        <text x="150" y="405" font-size="22">🚂⛴️</text>
-        <text x="612" y="92" font-size="22">🌌</text>
-
-        <!-- 地点マーカー -->
-        <g stroke="#e0355f" stroke-width="4" fill="#fff">
-          <circle cx="101" cy="467" r="8"/>
-          <circle cx="155" cy="430" r="6"/>
-          <circle cx="297" cy="488" r="8"/>
-          <circle cx="592" cy="59" r="8"/>
-        </g>
-
-        <!-- ラベル -->
-        <g font-family="'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif" fill="#1c1c1c">
-          <text x="40" y="447" font-size="24" font-weight="700">Bergen</text>
-          <text x="40" y="425" font-size="13">① ベルゲン 9/17泊</text>
-          <text x="178" y="440" font-size="15" font-weight="700">Nutshell®</text>
-          <text x="178" y="456" font-size="12">② ナットシェル 9/18</text>
-          <text x="310" y="505" font-size="24" font-weight="700">Oslo</text>
-          <text x="310" y="523" font-size="13">③⑤ オスロ 9/18・9/21泊</text>
-          <text x="500" y="42" font-size="24" font-weight="700">Tromsø</text>
-          <text x="486" y="20" font-size="13">④ トロムソ 9/19〜21・オーロラ2夜</text>
-        </g>
-
-        <!-- タップ案内 -->
+    <div class="map-row">
+      <a class="map-link" href="https://www.google.com/maps/d/viewer?mid=19D2XZofw_2M0bCLAG0YPPKKavlxujBs" target="_blank" rel="noopener">
+        🗺️ Google マップで旅の地図を開く ↗
+        <span class="map-link-sub">全行程・ナットシェル詳細ルート・ホテル・空港バス入り（Google マップアプリでそのまま使えます）</span>
+      </a>
+      <svg class="viking-fig" viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="地図を指さすバイキングのキャラクター">
+        <!-- 吹き出し -->
         <g>
-          <rect x="500" y="510" width="222" height="34" rx="17" fill="#1b3a5c"/>
-          <text x="518" y="532" font-size="14" fill="#fff">🗺️ タップで Google マップへ</text>
+          <rect x="28" y="6" width="168" height="40" rx="20" fill="#fff" stroke="#e8eef4" stroke-width="2"/>
+          <path d="M52,44 L38,60 L66,46 Z" fill="#fff" stroke="#e8eef4" stroke-width="2"/>
+          <rect x="52" y="42" width="18" height="6" fill="#fff"/>
+          <text x="44" y="32" font-size="16" font-weight="700" fill="#1b3a5c" font-family="'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif">地図はこっち！</text>
         </g>
-      </svg>
-    </a>
 
-    <a class="map-link" href="https://www.google.com/maps/d/viewer?mid=19D2XZofw_2M0bCLAG0YPPKKavlxujBs" target="_blank" rel="noopener">
-      🗺️ Google マップで旅の地図を開く ↗
-      <span class="map-link-sub">全行程・ナットシェル詳細ルート・ホテル・空港バス入り（Google マップアプリでそのまま使えます）</span>
-    </a>
+        <!-- 影 -->
+        <ellipse cx="118" cy="236" rx="56" ry="9" fill="#e8eef4"/>
+
+        <!-- 左腕（指さし・左へ） -->
+        <path d="M92,150 C74,148 58,145 44,142" stroke="#2c5f8a" stroke-width="16" fill="none" stroke-linecap="round"/>
+        <circle cx="40" cy="141" r="10" fill="#ffd9b8"/>
+        <path d="M36,140 L14,136" stroke="#ffd9b8" stroke-width="8" stroke-linecap="round"/>
+
+        <!-- 体（チュニック） -->
+        <path d="M84,142 L152,142 L162,208 L74,208 Z" fill="#2c5f8a"/>
+        <rect x="74" y="196" width="88" height="14" rx="7" fill="#e8eef4"/>
+        <rect x="80" y="166" width="76" height="10" rx="5" fill="#7a4b2a"/>
+        <rect x="108" y="164" width="20" height="14" rx="3" fill="#f4c542"/>
+
+        <!-- 右腕（盾を持つ） -->
+        <path d="M146,150 C160,156 168,164 172,172" stroke="#2c5f8a" stroke-width="16" fill="none" stroke-linecap="round"/>
+        <circle cx="176" cy="176" r="20" fill="#e0355f" stroke="#b02545" stroke-width="3"/>
+        <circle cx="176" cy="176" r="7" fill="#f4c542"/>
+
+        <!-- 脚・ブーツ -->
+        <rect x="92" y="206" width="16" height="20" rx="6" fill="#5a4632"/>
+        <rect x="128" y="206" width="16" height="20" rx="6" fill="#5a4632"/>
+        <rect x="88" y="222" width="24" height="12" rx="6" fill="#7a4b2a"/>
+        <rect x="124" y="222" width="24" height="12" rx="6" fill="#7a4b2a"/>
+
+        <!-- ひげ -->
+        <path d="M88,118 C86,150 100,160 118,160 C136,160 150,150 148,118 C136,128 100,128 88,118 Z" fill="#e58a3a"/>
+
+        <!-- 顔 -->
+        <circle cx="118" cy="106" r="38" fill="#ffd9b8"/>
+        <circle cx="104" cy="102" r="5" fill="#2d3748"/>
+        <circle cx="132" cy="102" r="5" fill="#2d3748"/>
+        <circle cx="106" cy="100" r="1.8" fill="#fff"/>
+        <circle cx="134" cy="100" r="1.8" fill="#fff"/>
+        <ellipse cx="96" cy="114" rx="7" ry="4.5" fill="#ffb3a0"/>
+        <ellipse cx="140" cy="114" rx="7" ry="4.5" fill="#ffb3a0"/>
+        <path d="M110,120 Q118,128 126,120" stroke="#c96f4a" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+        <!-- ヘルメット -->
+        <path d="M80,96 C80,68 98,54 118,54 C138,54 156,68 156,96 Z" fill="#b8c4cf"/>
+        <rect x="76" y="90" width="84" height="12" rx="6" fill="#93a1ad"/>
+        <circle cx="88" cy="96" r="2.5" fill="#e8eef4"/>
+        <circle cx="118" cy="96" r="2.5" fill="#e8eef4"/>
+        <circle cx="148" cy="96" r="2.5" fill="#e8eef4"/>
+        <!-- 角 -->
+        <path d="M80,84 C64,80 56,66 58,50 C70,58 78,66 84,76 Z" fill="#f5ead9" stroke="#d9c9a8" stroke-width="2"/>
+        <path d="M156,84 C172,80 180,66 178,50 C166,58 158,66 152,76 Z" fill="#f5ead9" stroke="#d9c9a8" stroke-width="2"/>
+      </svg>
+    </div>
   </section>
 
   <!-- ===== 旅程 ===== -->
