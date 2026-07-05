@@ -465,22 +465,6 @@
     font-weight: 400;
     opacity: 0.85;
   }
-  .map-legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    margin-top: 14px;
-    font-size: 0.85rem;
-    color: var(--text-sub);
-  }
-  .map-legend span { display: flex; align-items: center; gap: 6px; }
-  .legend-line {
-    display: inline-block;
-    width: 34px;
-    height: 0;
-    border-top: 3px solid var(--aurora-green);
-  }
-  .legend-line.flight { border-top: 3px solid var(--fjord-blue); }
 
   /* ===== 単発予定 ===== */
   .titem {
@@ -601,11 +585,6 @@
       🗺️ Google マップで旅の地図を開く ↗
       <span class="map-link-sub">全行程・ナットシェル詳細ルート・ホテル・空港バス入り（Google マップアプリでそのまま使えます）</span>
     </a>
-    <div class="map-legend">
-      <span><span class="legend-line"></span> 陸路（鉄道・バス・クルーズ）</span>
-      <span><span class="legend-line flight"></span> 空港アクセス（バス・特急）</span>
-      <span>✈️ フライトは点線　🏨 ホテル　🚉 駅・バス停</span>
-    </div>
   </section>
 
   <!-- ===== 旅程 ===== -->
