@@ -458,11 +458,10 @@
     align-items: center;
     gap: 6px;
     text-decoration: none;
-    background: #fff;
-    border: 1px solid var(--cloud);
+    background: linear-gradient(135deg, var(--fjord-deep), var(--fjord-blue));
     border-radius: 14px;
     padding: 26px 20px;
-    box-shadow: 0 4px 16px rgba(27, 58, 92, 0.12);
+    box-shadow: 0 4px 16px rgba(27, 58, 92, 0.18);
     transition: transform 0.15s, box-shadow 0.15s;
   }
   .map-icon-link:hover {
@@ -477,12 +476,12 @@
   .map-icon-label {
     font-size: 1.15rem;
     font-weight: 700;
-    color: var(--fjord-deep);
+    color: #fff;
     margin-top: 6px;
   }
   .map-icon-sub {
     font-size: 0.82rem;
-    color: var(--text-sub);
+    color: rgba(255,255,255,0.85);
   }
   @media (max-width: 560px) {
     .map-row { gap: 10px; }
