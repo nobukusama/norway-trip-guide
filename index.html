@@ -54,6 +54,25 @@
     opacity: 0.9;
     letter-spacing: 0.15em;
   }
+  .herolink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    text-decoration: none;
+    background: #fff;
+    color: var(--fjord-deep);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 11px 22px;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: transform 0.15s, box-shadow 0.15s;
+    position: relative;
+    z-index: 2;
+  }
+  .herolink:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.3); }
+  .herolink .ar { color: var(--aurora-green); font-weight: 800; }
 
   /* ===== ナビゲーション ===== */
   nav {
@@ -616,6 +635,8 @@
 <header>
   <h1>ノルウェー旅行ガイド</h1>
   <p class="subtitle">2026年9月 — フィヨルドとオーロラの国へ</p>
+  <br>
+  <a class="herolink" href="https://nobukusama.github.io/norway-sightseeing-guide/"><span class="ar">🏛️</span> 観光ガイド（見どころ・グルメ）へ <span class="ar">→</span></a>
 </header>
 
 <nav>
@@ -1435,6 +1456,10 @@
   </section>
 
 </main>
+
+<div style="text-align: center; margin: 40px 20px 0;">
+  <a class="herolink" style="background: var(--aurora-green); color: #fff; box-shadow: 0 6px 18px rgba(27,58,92,0.2);" href="https://nobukusama.github.io/norway-sightseeing-guide/"><span style="color:#fff;">🏛️</span> 観光ガイド（見どころ・グルメ）へ <span style="color:#fff;">→</span></a>
+</div>
 
 <footer>
   Norway Trip 2026 — Travel Guide<br>
