@@ -145,14 +145,26 @@
   .overview thead th {
     background: var(--fjord-deep);
     color: #fff;
-    padding: 10px 14px;
+    padding: 10px 10px;
     text-align: left;
     font-size: 0.85rem;
   }
   .overview td {
-    padding: 9px 14px;
+    padding: 9px 10px;
     border-bottom: 1px solid var(--cloud);
     vertical-align: middle;
+  }
+  /* 日付列・宿泊列は内容ぴったりに狭め、主な行程列を最大化 */
+  .overview th:first-child, .overview td:first-child,
+  .overview th:last-child, .overview td:last-child {
+    width: 1%;
+    white-space: nowrap;
+  }
+  /* 主な行程列：単語途中で改行しない（Latinは語を保持、和文はスペースで折り返し） */
+  .overview td:nth-child(2) {
+    word-break: keep-all;
+    overflow-wrap: normal;
+    line-break: strict;
   }
   .overview tr:last-child td { border-bottom: none; }
   .overview tbody tr:hover { background: var(--snow); }
@@ -626,6 +638,8 @@
     .flight-route { flex-direction: column; }
     .flight-arrow { width: 100%; }
     .overview { font-size: 0.8rem; }
+    .overview thead th, .overview td { padding: 8px 7px; }
+    .overview .ov-stay { padding: 1px 8px; font-size: 0.74rem; }
     .day-header .day-stay { margin-left: 0; }
   }
 </style>
@@ -780,27 +794,27 @@
         <tr>
           <td class="ov-date"><a href="#d0917">9/17（木）</a></td>
           <td>✈️ ヘルシンキ（Helsinki）乗継 → 10:05 ベルゲン（Bergen）着・市内観光</td>
-          <td><span class="ov-stay">ベルゲン（Bergen）</span></td>
+          <td><span class="ov-stay">ベルゲン</span></td>
         </tr>
         <tr>
           <td class="ov-date"><a href="#d0918">9/18（金）</a></td>
           <td>🚂⛴️ ナットシェル®（Nutshell®・フィヨルド縦断）→ 22:27 オスロ（Oslo）着</td>
-          <td><span class="ov-stay">オスロ（Oslo）</span></td>
+          <td><span class="ov-stay">オスロ</span></td>
         </tr>
         <tr>
           <td class="ov-date"><a href="#d0919">9/19（土）</a></td>
           <td>✈️ 09:10 オスロ（Oslo）発 → トロムソ（Tromsø）　🌌 オーロラ①</td>
-          <td><span class="ov-stay aurora">トロムソ（Tromsø）</span></td>
+          <td><span class="ov-stay aurora">トロムソ</span></td>
         </tr>
         <tr>
           <td class="ov-date"><a href="#d0920">9/20（日）</a></td>
           <td>🚶 トロムソ（Tromsø）観光　🌌 オーロラ②</td>
-          <td><span class="ov-stay aurora">トロムソ（Tromsø）</span></td>
+          <td><span class="ov-stay aurora">トロムソ</span></td>
         </tr>
         <tr>
           <td class="ov-date"><a href="#d0921">9/21（月）</a></td>
           <td>✈️ 10:50 トロムソ（Tromsø）発 → オスロ（Oslo）・市内観光</td>
-          <td><span class="ov-stay">オスロ（Oslo）</span></td>
+          <td><span class="ov-stay">オスロ</span></td>
         </tr>
         <tr>
           <td class="ov-date"><a href="#d0922">9/22（火）</a></td>
