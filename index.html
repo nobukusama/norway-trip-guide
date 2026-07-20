@@ -252,13 +252,9 @@
   details.acc {
     background: #fff;
     border: 1px solid var(--cloud);
-    border-left-width: 6px;
     border-radius: 10px;
     margin: 10px 0;
   }
-  details.acc.flight { border-left-color: var(--fjord-blue); }
-  details.acc.hotel  { border-left-color: var(--aurora-green); }
-  details.acc.tour   { border-left-color: var(--aurora-purple); }
   .acc summary {
     display: flex;
     align-items: center;
@@ -414,6 +410,38 @@
     color: var(--text-sub);
     margin: 10px 0 12px;
   }
+  .hotel-card {
+    background: #fff;
+    border: 1px solid var(--cloud);
+    border-top: 4px solid var(--fjord-blue);
+    border-radius: 14px;
+    padding: 20px;
+    margin: 16px 0;
+    box-shadow: 0 4px 16px rgba(27, 58, 92, 0.08);
+  }
+  .hotel-card h3 {
+    color: var(--fjord-deep);
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+  .hotel-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .hotel-card th, .hotel-card td {
+    padding: 9px 10px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--cloud);
+  }
+  .hotel-card th {
+    width: 8em;
+    color: var(--fjord-blue);
+    font-weight: 700;
+  }
+  .hotel-card tr:last-child th,
+  .hotel-card tr:last-child td { border-bottom: none; }
   .gmaps {
     display: inline-block;
     margin: 4px 6px 2px 0;
@@ -666,6 +694,9 @@
       word-break: normal;
       overflow-wrap: anywhere;
     }
+    .day-body { padding: 14px 12px; }
+    .acc summary { padding: 12px; }
+    .acc-body { padding: 4px 12px 14px; }
     .acc summary > * { min-width: 0; }
     .flight-route { flex-direction: column; }
     .flight-arrow { width: 100%; }
@@ -685,6 +716,19 @@
       padding: 4px 4px 0;
     }
     .acc-body td { border-bottom: none; padding: 2px 4px 6px 4px; }
+    .hotel-card { padding: 16px 14px; }
+    .hotel-card table, .hotel-card tbody, .hotel-card tr,
+    .hotel-card th, .hotel-card td { display: block; width: auto; }
+    .hotel-card tr {
+      border-bottom: 1px solid var(--cloud);
+      padding: 5px 0;
+    }
+    .hotel-card tr:last-child { border-bottom: none; }
+    .hotel-card th {
+      border-bottom: none;
+      padding: 4px 4px 0;
+    }
+    .hotel-card td { border-bottom: none; padding: 2px 4px 6px; }
     /* 行程項目：時刻を上・内容を下（全幅）に積み重ねる */
     .titem { display: block; padding: 8px 4px; }
     .titem .t-time {
