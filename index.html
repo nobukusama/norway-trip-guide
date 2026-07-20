@@ -121,6 +121,9 @@
     max-width: 860px;
     margin: 0 auto;
     padding: 40px 20px 80px;
+    /* 単語の途中で改行しない（和文はスペース区切りで折り返し、英単語は語のまま保持） */
+    word-break: keep-all;
+    overflow-wrap: normal;
   }
   section { margin-bottom: 60px; }
   h2 {
