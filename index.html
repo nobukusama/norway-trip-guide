@@ -23,6 +23,8 @@
     background: var(--snow);
     color: var(--text);
     line-height: 1.7;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   /* ===== ヘッダー ===== */
@@ -650,7 +652,13 @@
       word-break: normal;
       overflow-wrap: anywhere;
     }
+    main, .day-card, .day-body, .titem, .titem .t-body, .titem .t-sub {
+      max-width: 100%;
+      min-width: 0;
+    }
     .overview { table-layout: fixed; }
+    .overview th:first-child,
+    .overview td:first-child { width: 5.6em; }
     .overview td:nth-child(2),
     .acc-title,
     .acc-sub,
@@ -686,6 +694,10 @@
       margin-bottom: 2px;
     }
     .titem .t-body { display: block; }
+    .titem .t-sub {
+      word-break: break-all;
+      overflow-wrap: anywhere;
+    }
   }
 </style>
 </head>
