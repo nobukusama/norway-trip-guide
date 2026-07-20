@@ -641,6 +641,18 @@
     .overview thead th, .overview td { padding: 8px 7px; }
     .overview .ov-stay { padding: 1px 8px; font-size: 0.74rem; }
     .day-header .day-stay { margin-left: 0; }
+    /* 詳細テーブル：タイトルを上・内容を下（全幅）に積み重ねる */
+    .acc-body table, .acc-body tbody, .acc-body tr,
+    .acc-body th, .acc-body td { display: block; width: auto; }
+    .acc-body tr { border-bottom: 1px solid var(--cloud); padding: 4px 0; }
+    .acc-body tr:last-child { border-bottom: none; }
+    .acc-body th {
+      width: auto;
+      white-space: normal;
+      border-bottom: none;
+      padding: 4px 4px 0;
+    }
+    .acc-body td { border-bottom: none; padding: 2px 4px 6px 4px; }
   }
 </style>
 </head>
