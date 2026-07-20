@@ -685,7 +685,24 @@
       overflow-wrap: anywhere;
     }
     .day-body { padding: 14px 12px; }
-    .acc summary { padding: 12px; }
+    .day-header {
+      align-items: flex-start;
+      padding: 12px 14px;
+      gap: 4px;
+    }
+    .day-header .day-date,
+    .day-header .day-title,
+    .day-header .day-stay { flex-basis: 100%; }
+    .day-header .day-stay { margin-left: 0; }
+    .acc summary {
+      position: relative;
+      align-items: flex-start;
+      gap: 6px 8px;
+      padding: 12px 34px 12px 12px;
+    }
+    .acc summary::after { position: absolute; top: 12px; right: 12px; }
+    .acc-title, .acc-sub { flex-basis: 100%; }
+    .acc-title { margin-top: 2px; }
     .acc-body { padding: 4px 12px 14px; }
     .acc summary > * { min-width: 0; }
     .flight-route { flex-direction: column; }
@@ -718,20 +735,30 @@
       border-bottom: none;
       padding: 4px 4px 0;
     }
-    .hotel-card td { border-bottom: none; padding: 2px 4px 6px; }
+    .hotel-card td {
+      border-bottom: none;
+      padding: 2px 4px 6px;
+      line-height: 1.85;
+    }
     /* 行程項目：時刻を上・内容を下（全幅）に積み重ねる */
-    .titem { display: block; padding: 8px 4px; }
+    .titem { display: block; padding: 12px 4px; }
+    .titem + .titem { border-top: 1px solid var(--cloud); }
     .titem .t-time {
       display: block;
       min-width: 0;
       text-align: left;
       margin-bottom: 2px;
     }
-    .titem .t-body { display: block; }
+    .titem .t-body { display: block; line-height: 1.9; }
     .titem .t-sub {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--cloud);
       word-break: break-all;
       overflow-wrap: anywhere;
+      line-height: 1.85;
     }
+    .gmaps { margin-top: 6px; }
   }
 </style>
 </head>
