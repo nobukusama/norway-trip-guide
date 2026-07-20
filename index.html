@@ -367,22 +367,23 @@
 
   /* ===== 乗り継ぎ ===== */
   .layover {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    position: relative;
+    padding-left: 18px;
     margin: 12px 0 12px 24px;
     color: var(--text-sub);
     font-size: 0.9rem;
+    line-height: 1.7;
   }
   .layover::before {
     content: "";
-    display: block;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
     width: 2px;
-    height: 40px;
     background: repeating-linear-gradient(to bottom, var(--fjord-blue) 0 4px, transparent 4px 8px);
-    margin-right: 6px;
   }
-  .layover strong { color: var(--fjord-blue); }
+  .layover strong { color: var(--fjord-blue); white-space: nowrap; }
 
   /* ===== サマリー ===== */
   .summary {
@@ -902,7 +903,8 @@
       </div>
       <div class="day-body">
         <div class="layover">
-          🔄 05:55 ヘルシンキ（Helsinki）着　—　乗り継ぎ時間 <strong>2時間15分</strong>
+          🔄 05:55 ヘルシンキ（Helsinki）着<br>
+          乗り継ぎ時間 <strong>2時間15分</strong>
         </div>
         <details class="acc flight">
           <summary>
@@ -1414,7 +1416,8 @@
           </div>
         </details>
         <div class="layover">
-          🔄 ヘルシンキ（Helsinki）で乗り換え　—　乗り継ぎ時間 <strong>5時間0分</strong>（日付が変わって9/23発）
+          🔄 ヘルシンキ（Helsinki）で乗り換え<br>
+          乗り継ぎ時間 <strong>5時間0分</strong>（日付が変わって9/23発）
         </div>
       </div>
     </div>
