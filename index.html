@@ -743,10 +743,41 @@
     margin-bottom: 3px;
   }
 
+  .food-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 16px 0 18px;
+  }
+  .food-photo {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #e1d8eb;
+    border-radius: 13px;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(45, 34, 62, 0.1);
+  }
+  .food-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  .food-photo.salmon img { object-position: center 48%; }
+  .food-photo figcaption {
+    padding: 10px 12px;
+    color: var(--fjord-deep);
+    font-size: 0.86rem;
+    font-weight: 700;
+    line-height: 1.55;
+  }
+
   @media (max-width: 560px) {
     .practical-grid,
     .transport-columns,
-    .food-list { grid-template-columns: 1fr; }
+    .food-list,
+    .food-photo-grid { grid-template-columns: 1fr; }
     .practical-card,
     .practical-panel { padding: 16px 14px; }
     .practical-nav { gap: 7px; }
@@ -1912,6 +1943,25 @@
     <article class="practical-panel food" id="norway-food">
       <h3>🍽️ ノルウェーで食べたいもの</h3>
       <p>冷たい海で育ったサーモンやニシンなど、新鮮な魚介はノルウェー旅行の楽しみのひとつ。ベルゲンなどの港町では、シーフードに加えてクジラ料理や家庭的な煮込み料理も味わえます。</p>
+
+      <div class="food-photo-grid" aria-label="ノルウェー料理の写真">
+        <figure class="food-photo salmon">
+          <img src="img/salmon.jpg" alt="レモンとハーブを添えた焼きサーモン" loading="lazy">
+          <figcaption>サーモン — 脂がのったノルウェーの定番シーフード</figcaption>
+        </figure>
+        <figure class="food-photo">
+          <img src="img/norwegian-seafood.jpg" alt="ノルウェーのシーフード料理" loading="lazy">
+          <figcaption>シーフード料理 — 港町では新鮮な魚介を楽しみたい</figcaption>
+        </figure>
+        <figure class="food-photo">
+          <img src="img/fish-soup.jpg" alt="魚介が入った温かい魚のスープ" loading="lazy">
+          <figcaption>魚のスープ — 寒い日にうれしい具だくさんの一皿</figcaption>
+        </figure>
+        <figure class="food-photo">
+          <img src="img/brunost.jpg" alt="ノルウェーの茶色いチーズ、ブルンオスト" loading="lazy">
+          <figcaption>ブラウンチーズ — キャラメルのような甘みが特徴</figcaption>
+        </figure>
+      </div>
 
       <ul class="food-list">
         <li><strong>フォーリコール / Fårikål</strong>ラム肉とキャベツを煮込んだ、ノルウェーを代表する家庭料理。</li>
