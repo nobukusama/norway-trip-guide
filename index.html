@@ -584,6 +584,177 @@
     margin-top: 6px;
   }
 
+  /* ===== ノルウェー旅行の実用ガイド ===== */
+  .practical-guide {
+    margin-top: 42px;
+    scroll-margin-top: 76px;
+  }
+  .practical-lead {
+    margin: -8px 0 18px;
+    color: var(--text-sub);
+    line-height: 1.9;
+  }
+  .practical-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+  .practical-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid #cddae8;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--fjord-blue);
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .practical-nav a:hover {
+    border-color: var(--aurora-green);
+    color: var(--fjord-deep);
+  }
+  .practical-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .practical-card,
+  .practical-panel {
+    min-width: 0;
+    background: #fff;
+    border: 1px solid #dfe7ef;
+    box-shadow: 0 4px 16px rgba(27, 58, 92, 0.08);
+  }
+  .practical-card {
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .practical-card h3,
+  .practical-panel h3 {
+    margin: 0 0 9px;
+    color: var(--fjord-deep);
+    line-height: 1.45;
+  }
+  .practical-card h3 { font-size: 1.05rem; }
+  .practical-card p,
+  .practical-panel p,
+  .practical-panel li { line-height: 1.85; }
+  .practical-card p { margin: 0; }
+  .practical-panel {
+    margin-top: 18px;
+    padding: 22px;
+    border-radius: 16px;
+    border-top: 5px solid var(--fjord-blue);
+    scroll-margin-top: 76px;
+  }
+  .practical-panel.tax { border-top-color: #d89028; }
+  .practical-panel.safety { border-top-color: #c84d4d; }
+  .practical-panel.transport { border-top-color: var(--aurora-green); }
+  .practical-panel.food { border-top-color: var(--aurora-purple); }
+  .practical-panel h3 { font-size: 1.25rem; }
+  .practical-summary {
+    margin: 0 0 16px;
+    color: var(--text-sub);
+  }
+  .practical-subsection {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--cloud);
+  }
+  .practical-subsection h4 {
+    margin: 0 0 8px;
+    color: var(--fjord-blue);
+    font-size: 1rem;
+  }
+  .practical-steps {
+    margin: 10px 0 0;
+    padding-left: 1.5em;
+  }
+  .practical-steps li + li { margin-top: 12px; }
+  .practical-note {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-left: 4px solid #e2a33d;
+    border-radius: 8px;
+    background: #fff8e8;
+    color: #705016;
+    font-size: 0.87rem;
+  }
+  .emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .emergency-card {
+    padding: 13px 8px;
+    border-radius: 12px;
+    background: #fff4f4;
+    text-align: center;
+  }
+  .emergency-card strong {
+    display: block;
+    color: #a92f2f;
+    font-size: 1.35rem;
+  }
+  .transport-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .transport-box {
+    min-width: 0;
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--snow);
+  }
+  .transport-box h4 {
+    margin: 0 0 8px;
+    color: var(--fjord-blue);
+  }
+  .transport-box p { margin: 0; }
+  .practical-link {
+    display: inline-flex;
+    margin-top: 10px;
+    font-weight: 700;
+    color: var(--fjord-blue);
+  }
+  .food-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .food-list li {
+    padding: 13px 14px;
+    border-radius: 12px;
+    background: #f6f1fb;
+  }
+  .food-list strong {
+    display: block;
+    color: var(--aurora-purple);
+    margin-bottom: 3px;
+  }
+
+  @media (max-width: 560px) {
+    .practical-grid,
+    .transport-columns,
+    .food-list { grid-template-columns: 1fr; }
+    .practical-card,
+    .practical-panel { padding: 16px 14px; }
+    .practical-nav { gap: 7px; }
+    .practical-nav a { flex: 1 1 calc(50% - 7px); justify-content: center; }
+    .emergency-card { padding: 11px 5px; font-size: 0.78rem; }
+    .emergency-card strong { font-size: 1.2rem; }
+  }
+
   /* ===== 参考リンク（日程カード内） ===== */
   .sub-links {
     margin-top: 16px;
@@ -1627,6 +1798,134 @@
     </p>
   </section>
 
+  <section class="practical-guide" id="practical-guide">
+    <h2>🧭 ノルウェー旅行の実用ガイド</h2>
+    <p class="practical-lead">現地で迷いやすい電気・水・チップから、免税、緊急時、交通、食事までをまとめました。必要な項目から確認できます。</p>
+
+    <nav class="practical-nav" aria-label="実用ガイド内メニュー">
+      <a href="#daily-basics">🔌 生活の基本</a>
+      <a href="#tax-free">💳 TAX FREE</a>
+      <a href="#safety">🆘 緊急時</a>
+      <a href="#transport-info">🚆 鉄道・バス</a>
+      <a href="#norway-food">🍽️ 食事</a>
+    </nav>
+
+    <div class="practical-grid" id="daily-basics">
+      <article class="practical-card">
+        <h3>🔌 電圧とプラグ</h3>
+        <p><strong>230V・50Hz</strong>。プラグは丸2ピンのB・Cタイプです。日本専用の100V製品を使う場合は変圧器が必要です。充電器などは本体表示の入力電圧を確認しましょう。</p>
+      </article>
+
+      <article class="practical-card">
+        <h3>💧 飲料水</h3>
+        <p>ほとんどの場所で水道水を飲めます。ミネラルウォーターは炭酸入りが多いため、苦手な方は購入前に炭酸の有無を確認してください。</p>
+      </article>
+
+      <article class="practical-card">
+        <h3>💬 チップ</h3>
+        <p>基本的にチップの習慣はありません。特別な依頼へのお礼や、サービス料が含まれないレストランで<strong>7〜10％程度</strong>が目安です。タクシーでは荷物を運んでもらったときや、端数を切り上げて渡すことがあります。</p>
+      </article>
+
+      <article class="practical-card">
+        <h3>📮 郵便</h3>
+        <p>郵便局は「POST」が目印です。日本宛ては<strong>Air Mail</strong>と明記し、国内・国外とも赤いポストへ投函します。はがき1枚または20gまでの封書は37NOK〜、到着まで5〜10日が目安です。</p>
+      </article>
+
+      <article class="practical-card">
+        <h3>💿 DVD方式</h3>
+        <p>ノルウェーはPAL方式、日本はNTSC方式です。現地で購入したDVDは一般的な日本向けプレーヤーでは再生できない場合があります。リージョンコードは日本と同じ「2」で、対応するパソコンなどでは再生できます。</p>
+      </article>
+    </div>
+
+    <article class="practical-panel tax" id="tax-free">
+      <h3>💳 TAX FREE・免税手続き</h3>
+      <p class="practical-summary">ノルウェー国外に住む旅行者は、「TAX FREE」表示のある店舗で条件を満たすと、付加価値税（VAT）の一部について払い戻しを申請できます。</p>
+
+      <div class="practical-subsection">
+        <h4>対象となる買い物</h4>
+        <p>商品には通常15％または25％のVATが含まれています。1日・1店舗あたり<strong>315NOK以上</strong>（15％対象の商品は290NOK以上）を購入した場合、最大19％の払い戻し対象となります。</p>
+      </div>
+
+      <div class="practical-subsection">
+        <h4>買い物のとき</h4>
+        <ol class="practical-steps">
+          <li>「TAX FREE」加盟店で条件額以上を購入し、旅行者であることを伝えます。</li>
+          <li>パスポートを提示し、免税書類を作成してもらいます。レシートも保管してください。</li>
+          <li>免税対象の商品は、ノルウェーを出国するまで開封・使用しないようにします。</li>
+        </ol>
+      </div>
+
+      <div class="practical-subsection">
+        <h4>出国するとき</h4>
+        <ol class="practical-steps">
+          <li>オスロ・ガーデモエン空港では、原則として<strong>荷物を預ける前</strong>にグローバルブルー・カウンターへ。未使用の商品、パスポート、航空券、免税書類、レシートを提示します。</li>
+          <li>手荷物に入れる商品の場合は、出国手続き後に税関スタンプを受ける場合があります。商品の提示を求められることがあるため、すぐ出せるようにしておきましょう。</li>
+          <li>確認済みの書類で、現金またはクレジットカードへの払い戻しを申請します。日本へ持ち帰り、グローバルブルー専用ポストから返送する方法もあります。</li>
+        </ol>
+        <p class="practical-note">免税書類への住所・氏名の記入とレシートの添付を忘れずに。資料上、税関スタンプの受領は購入から1カ月以内、スタンプ受領済み書類の申請は購入から1年以内が目安です。金額・期限・手続きは変更されることがあるため、購入店と空港で最新条件を必ず確認してください。</p>
+      </div>
+    </article>
+
+    <article class="practical-panel safety" id="safety">
+      <h3>🆘 安全とトラブル</h3>
+      <p>ノルウェーの治安は比較的良好ですが、観光地や交通機関では置き引き・窃盗などの軽犯罪に注意が必要です。荷物から目を離さず、夜間のひとり歩きは避けましょう。</p>
+      <div class="emergency-grid" aria-label="緊急電話番号">
+        <div class="emergency-card">警察<strong>112</strong></div>
+        <div class="emergency-card">消防<strong>110</strong></div>
+        <div class="emergency-card">救急車<strong>113</strong></div>
+      </div>
+    </article>
+
+    <article class="practical-panel transport" id="transport-info">
+      <h3>🚆 鉄道・バスの調べ方と買い方</h3>
+      <p class="practical-summary">複数の鉄道会社やバスを横断して調べるなら、ノルウェー国内の時刻表検索サービス「Entur」が便利です。</p>
+      <a class="practical-link" href="https://entur.no/" target="_blank" rel="noopener noreferrer">Enturで時刻・乗り継ぎを調べる ↗</a>
+
+      <div class="transport-columns">
+        <section class="transport-box">
+          <h4>鉄道：時刻を調べる</h4>
+          <p>各鉄道会社の公式サイトのほか、Enturなら鉄道・バス・乗り継ぎをまとめて検索できます。有人駅では、目的地と出発日時を伝えて調べてもらうこともできます。</p>
+        </section>
+
+        <section class="transport-box">
+          <h4>鉄道：日本で購入</h4>
+          <p>各鉄道会社のサイトから予約・購入できます。eチケットはスマートフォンに保存して提示でき、現地発券を選んだ場合は窓口や券売機で受け取ります。</p>
+        </section>
+
+        <section class="transport-box">
+          <h4>鉄道：現地で購入</h4>
+          <p>オスロ中央駅などでは有人窓口または券売機を利用します。乗る列車が決まっていれば、券売機のほうが待ち時間を短くできることがあります。</p>
+        </section>
+
+        <section class="transport-box">
+          <h4>予約とVyアプリ</h4>
+          <p>時刻表に「R」がある列車は予約が必要です。混雑期は早めの予約がおすすめ。Vyでは利用日の90日前から予約でき、座席指定には別料金がかかる場合があります。Vy公式アプリでは予約・購入・時刻検索ができます。</p>
+        </section>
+
+        <section class="transport-box">
+          <h4>バスのチケット</h4>
+          <p>ウェブサイトやバスターミナルの窓口で購入します。小さな町で売り場がない場合は、行き先を伝えてドライバーから直接購入します。時刻表はターミナル掲示やEnturで確認できます。</p>
+        </section>
+      </div>
+    </article>
+
+    <article class="practical-panel food" id="norway-food">
+      <h3>🍽️ ノルウェーで食べたいもの</h3>
+      <p>冷たい海で育ったサーモンやニシンなど、新鮮な魚介はノルウェー旅行の楽しみのひとつ。ベルゲンなどの港町では、シーフードに加えてクジラ料理や家庭的な煮込み料理も味わえます。</p>
+
+      <ul class="food-list">
+        <li><strong>フォーリコール / Fårikål</strong>ラム肉とキャベツを煮込んだ、ノルウェーを代表する家庭料理。</li>
+        <li><strong>バカラオ / Bacalao</strong>西海岸などで作られる干ダラを、トマトソースで煮込んだ料理。</li>
+        <li><strong>クジラ・トナカイ</strong>ステーキやシチューなどで提供される、ノルウェーらしい肉料理。</li>
+        <li><strong>ブラウンチーズ / Brunost</strong>キャラメルのような甘みがある茶色いチーズ。パンやワッフルと好相性。</li>
+      </ul>
+
+      <div class="practical-subsection">
+        <h4>ブラウンチーズの種類</h4>
+        <p><strong>Geitost（ヤイトオスト）</strong>はヤギ乳100％で、独特の風味があります。牛乳とヤギ乳を合わせた<strong>Gudbrandsdalsost（グドブランスダールスオスト）</strong>は、よりキャラメルに近い甘さで食べやすいタイプです。どちらもBrunost（茶色のチーズ）の仲間です。</p>
+      </div>
+    </article>
+  </section>
 </main>
 
 <footer>
