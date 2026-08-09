@@ -745,7 +745,7 @@
 
   .food-photo-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
     margin: 16px 0 18px;
   }
@@ -771,6 +771,13 @@
     font-size: 0.86rem;
     font-weight: 700;
     line-height: 1.55;
+  }
+  .food-photo .photo-credit {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-sub);
+    font-size: 0.72rem;
+    font-weight: 400;
   }
 
   @media (max-width: 560px) {
@@ -1942,12 +1949,19 @@
 
     <article class="practical-panel food" id="norway-food">
       <h3>🍽️ ノルウェーで食べたいもの</h3>
-      <p>冷たい海で育ったサーモンやニシンなど、新鮮な魚介はノルウェー旅行の楽しみのひとつ。ベルゲンなどの港町では、シーフードに加えてクジラ料理や家庭的な煮込み料理も味わえます。</p>
+      <p>冷たい海で育ったサーモンやニシンなど、新鮮な魚介はノルウェー旅行の楽しみのひとつ。ベルゲンなどの港町では、シーフードや家庭的な煮込み料理も味わえます。</p>
 
       <div class="food-photo-grid" aria-label="ノルウェー料理の写真">
         <figure class="food-photo salmon">
           <img src="img/salmon.jpg" alt="レモンとハーブを添えた焼きサーモン" loading="lazy">
           <figcaption>サーモン — 脂がのったノルウェーの定番シーフード</figcaption>
+        </figure>
+        <figure class="food-photo">
+          <img src="img/bacalao.jpg" alt="干ダラをトマトソースで煮込んだバカラオ" loading="lazy">
+          <figcaption>
+            バカラオ / Bacalao — 干ダラをトマトソースで煮込んだ、西海岸の名物料理。
+            <span class="photo-credit">写真：Netha Hussain / Wikimedia Commons（CC0）</span>
+          </figcaption>
         </figure>
         <figure class="food-photo">
           <img src="img/fish-soup.jpg" alt="魚介が入った温かい魚のスープ" loading="lazy">
@@ -1958,11 +1972,6 @@
           <figcaption>ブラウンチーズ / Brunost — キャラメルのような甘みがある茶色いチーズ。パンやワッフルと好相性。</figcaption>
         </figure>
       </div>
-
-      <ul class="food-list">
-        <li><strong>バカラオ / Bacalao</strong>西海岸などで作られる干ダラを、トマトソースで煮込んだ料理。</li>
-        <li><strong>クジラ・トナカイ</strong>ステーキやシチューなどで提供される、ノルウェーらしい肉料理。</li>
-      </ul>
 
       <div class="practical-subsection">
         <h4>ブラウンチーズの種類</h4>
