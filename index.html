@@ -577,22 +577,6 @@
     color: var(--text-sub);
     overflow-wrap: anywhere;
   }
-  .sightseeing-guide {
-    margin-top: 36px;
-  }
-  .sightseeing-guide > p {
-    margin: -8px 0 20px;
-    color: var(--text-sub);
-  }
-  #sightseeing-guide-content {
-    min-height: 120px;
-  }
-  .guide-loading,
-  .guide-load-error {
-    padding: 20px;
-    color: var(--text-sub);
-    text-align: center;
-  }
   .titem.aurora-item {
     background: #f3eefc;
     border-radius: 8px;
@@ -1926,13 +1910,6 @@
     </p>
   </section>
 
-  <section class="sightseeing-guide" id="sightseeing-guide">
-    <h2>🏛️ 観光ガイド</h2>
-    <p>ベルゲン・フロム・トロムソ・オスロの見どころ、グルメ、実用情報を、この旅行ガイド内でまとめて確認できます。</p>
-    <a class="herolink" href="#itinerary"><span class="ar">🗓️</span> 旅程へ戻る <span class="ar">↑</span></a>
-    <div id="sightseeing-guide-content"><p class="guide-loading">観光ガイドを読み込んでいます…</p></div>
-  </section>
-
   <section class="practical-guide" id="practical-guide">
     <h2>🧭 ノルウェー旅行の実用ガイド</h2>
     <p class="practical-lead">現地で迷いやすい電気・水・チップから、免税、緊急時、交通、食事までをまとめました。必要な項目から確認できます。</p>
@@ -2078,29 +2055,6 @@
   </section>
 
 </main>
-
-<script>
-  (async () => {
-    const container = document.getElementById('sightseeing-guide-content');
-    try {
-      const response = await fetch('sightseeing-guide-content.html');
-      if (!response.ok) throw new Error('Guide content could not be loaded');
-
-      const source = await response.text();
-      const guideDocument = new DOMParser().parseFromString(source, 'text/html');
-      const guideStyle = guideDocument.querySelector('style');
-      const guideContent = guideDocument.querySelector('.wrap');
-      if (!guideStyle || !guideContent) throw new Error('Guide content is incomplete');
-
-      const shadow = container.attachShadow({ mode: 'open' });
-      const style = document.createElement('style');
-      style.textContent = guideStyle.textContent.replaceAll(':root', ':host');
-      shadow.append(style, guideContent.cloneNode(true));
-    } catch (error) {
-      container.innerHTML = '<p class="guide-load-error">観光ガイドを読み込めませんでした。公開後にページを再読み込みしてください。</p>';
-    }
-  })();
-</script>
 
 <footer>
   Norway Trip 2026 — Travel Guide<br>
