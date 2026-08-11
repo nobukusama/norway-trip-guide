@@ -577,6 +577,22 @@
     color: var(--text-sub);
     overflow-wrap: anywhere;
   }
+  .sightseeing-guide {
+    margin-top: 36px;
+  }
+  .sightseeing-guide > p {
+    margin: -8px 0 20px;
+    color: var(--text-sub);
+  }
+  #sightseeing-guide-content {
+    min-height: 120px;
+  }
+  .guide-loading,
+  .guide-load-error {
+    padding: 20px;
+    color: var(--text-sub);
+    text-align: center;
+  }
   .titem.aurora-item {
     background: #f3eefc;
     border-radius: 8px;
@@ -742,7 +758,6 @@
     color: var(--aurora-purple);
     margin-bottom: 3px;
   }
-
   .food-photo-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -942,15 +957,15 @@
       margin-bottom: 2px;
     }
     .titem .t-body { display: block; line-height: 1.9; }
-    .titem .t-sub {
-      margin-top: 8px;
-      padding-top: 8px;
-      border-top: 1px dashed var(--cloud);
-      word-break: break-all;
-      overflow-wrap: anywhere;
-      line-height: 1.85;
-    }
-    .gmaps { margin-top: 6px; }
+  .titem .t-sub {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--cloud);
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    line-height: 1.85;
+  }
+  .gmaps { margin-top: 6px; }
   }
 </style>
 </head>
@@ -1100,11 +1115,11 @@
         </tr>
         <tr>
           <td class="ov-date"><a href="#d0921">9/21（月）</a></td>
-          <td>✈️ 10:50 トロムソ（Tromsø）発<br>→ オスロ（Oslo）着<br>市内観光<br><span class="ov-stay">🛏 オスロ泊</span></td>
+          <td>✈️ 10:50 トロムソ（Tromsø）発<br>→ オスロ（Oslo）着<br>MUNCH・オペラハウス・公共図書館<br><span class="ov-stay">🛏 オスロ泊</span></td>
         </tr>
         <tr>
           <td class="ov-date"><a href="#d0922">9/22（火）</a></td>
-          <td>✈️ 17:20 オスロ（Oslo）発<br>→ ヘルシンキ（Helsinki）乗継<br><span class="ov-stay">🛏 機中泊</span></td>
+          <td>9:00 市庁舎・王宮公園<br>14:00までに空港到着<br>✈️ 17:20 オスロ（Oslo）発 → ヘルシンキ（Helsinki）乗継<br><span class="ov-stay">🛏 機中泊</span></td>
         </tr>
         <tr>
           <td class="ov-date"><a href="#d0923">9/23（水）</a></td>
@@ -1603,8 +1618,42 @@
           </div>
         </div>
         <div class="titem">
-          <span class="t-time">午後</span>
-          <span class="t-body">🚶 オスロ（Oslo）観光（オペラハウス Operahuset、カールヨハン通り Karl Johans gate など）</span>
+          <span class="t-time">14:30〜14:40</span>
+          <div class="t-body">🧳 コンフォート ホテル グランド セントラルに荷物を預ける
+            <div class="t-sub">オスロ中央駅（Oslo S）の駅舎内。チェックイン前に荷物だけ預けて、身軽に出発します。</div>
+          </div>
+        </div>
+        <div class="titem">
+          <span class="t-time">14:40頃</span>
+          <div class="t-body">🚋 Jernbanetorgetからトラム19番でBjørvikaへ
+            <div class="t-sub">市内移動はトラム・地下鉄を利用。停留所から各入口までは短い徒歩があります。運行変更に備え、当日はRuterアプリで乗り場を確認。</div>
+          </div>
+        </div>
+        <div class="titem">
+          <span class="t-time">15:00〜17:15</span>
+          <div class="t-body">🖼️ <b>ムンク美術館（MUNCH）</b>
+            <div class="t-sub">「叫び」「マドンナ」などを鑑賞。月曜は18:00閉館なので、先に美術館を回ります。<br>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=MUNCH%20Museum%20Oslo" target="_blank" rel="noopener">📍 Googleマップ</a>
+              <a class="gmaps" href="https://www.munch.no/en/visit-us/opening-hours/" target="_blank" rel="noopener">🔗 開館時間</a></div>
+          </div>
+        </div>
+        <div class="titem">
+          <span class="t-time">17:20〜18:00</span>
+          <div class="t-body">🏛️ <b>オスロ・オペラハウス（Operahuset）</b>の外観・屋上
+            <div class="t-sub">海に浮かぶ氷山を思わせる建築。今回は公演見学ではなく、外観と屋根からの景色を楽しみます。<br>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Oslo%20Opera%20House" target="_blank" rel="noopener">📍 Googleマップ</a></div>
+          </div>
+        </div>
+        <div class="titem">
+          <span class="t-time">18:05〜18:50</span>
+          <div class="t-body">📚 <b>オスロ公共図書館（Deichman Bjørvika）</b>
+            <div class="t-sub">5階建てのモダンな公共図書館。館内の眺望スペースやユニークな設備を見学します。月曜は22:00まで開館。<br>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Deichman%20Bj%C3%B8rvika" target="_blank" rel="noopener">📍 Googleマップ</a></div>
+          </div>
+        </div>
+        <div class="titem">
+          <span class="t-time">19:00頃〜</span>
+          <span class="t-body">🍽️ 中央駅周辺で夕食 → ホテルにチェックイン</span>
         </div>
         <details class="acc hotel">
           <summary>
@@ -1640,13 +1689,54 @@
       </div>
       <div class="day-body">
         <div class="titem">
-          <span class="t-time">〜12:00</span>
-          <span class="t-body">🏨 チェックアウト（グランド セントラル / Grand Central）— 午前中はオスロ（Oslo）観光可</span>
+          <span class="t-time">08:15〜08:25</span>
+          <span class="t-body">🏨 チェックアウトし、荷物をホテルに預ける</span>
         </div>
         <div class="titem">
-          <span class="t-time">15:00頃</span>
+          <span class="t-time">08:30頃</span>
+          <div class="t-body">🚋 Jernbanetorgetからトラム12番でKontraskjæretへ
+            <div class="t-sub">市庁舎まで徒歩約3分。9:00の開館に合わせ、少し早めに到着します。</div>
+          </div>
+        </div>
+        <div class="titem">
+          <span class="t-time">09:00〜09:45</span>
+          <div class="t-body">🏢 <b>オスロ市庁舎（Rådhuset）</b>
+            <div class="t-sub">開館と同時に入館。巨大壁画や2階のムンクの間を見学。入場無料ですが、入口で保安検査があります。<br>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Oslo%20City%20Hall" target="_blank" rel="noopener">📍 Googleマップ</a>
+              <a class="gmaps" href="https://www.oslo.kommune.no/oslo-city-hall/opening-hours/" target="_blank" rel="noopener">🔗 開館情報</a></div>
+          </div>
+        </div>
+        <div class="titem">
+          <span class="t-time">09:50〜10:15</span>
+          <div class="t-body">🚋 Kontraskjæretからトラム12番でSolliへ
+            <div class="t-sub">Solliから王宮公園までは徒歩約8〜10分。歩く距離を抑えた移動です。</div>
+          </div>
+        </div>
+        <div class="titem">
+          <span class="t-time">10:15〜11:10</span>
+          <div class="t-body">👑 <b>王宮の外観・王宮公園（Slottsparken）</b>
+            <div class="t-sub">9月は王宮内部の一般見学シーズン外のため、外観と公園を見学します。<br>
+              <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=The%20Royal%20Palace%20Oslo" target="_blank" rel="noopener">📍 Googleマップ</a></div>
+          </div>
+        </div>
+        <div class="titem">
+          <span class="t-time">11:20頃</span>
+          <div class="t-body">🚇 Nationaltheatretから地下鉄でJernbanetorgetへ
+            <div class="t-sub">ホテルに戻る前に、中央駅周辺で早めの昼食。</div>
+          </div>
+        </div>
+        <div class="titem">
+          <span class="t-time">11:30〜12:30</span>
+          <span class="t-body">🍽️ オスロ中央駅周辺で昼食</span>
+        </div>
+        <div class="titem">
+          <span class="t-time">12:30〜12:50</span>
+          <span class="t-body">🧳 ホテルで預けた荷物を受け取る</span>
+        </div>
+        <div class="titem">
+          <span class="t-time">13:10頃</span>
           <div class="t-body">🚄 オスロ中央駅（Oslo S）から空港特急フリートグ（Flytoget）または Vy 普通列車で空港へ — 約20〜25分
-            <div class="t-sub">グランド セントラルは駅舎内。搭乗手続きの目安に余裕をもって・AY916は17:20発<br>
+            <div class="t-sub"><b>13:35〜13:50頃に空港到着予定（14:00到着目標）</b>。AY916は17:20発なので、搭乗手続きにも十分な余裕があります。<br>
               <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Oslo%20Sentralstasjon" target="_blank" rel="noopener">📍 オスロ中央駅</a>
               <a class="gmaps" href="https://www.google.com/maps/search/?api=1&query=Oslo%20lufthavn%20Gardermoen" target="_blank" rel="noopener">📍 ガーデモエン空港</a></div>
           </div>
@@ -1836,6 +1926,13 @@
     </p>
   </section>
 
+  <section class="sightseeing-guide" id="sightseeing-guide">
+    <h2>🏛️ 観光ガイド</h2>
+    <p>ベルゲン・フロム・トロムソ・オスロの見どころ、グルメ、実用情報を、この旅行ガイド内でまとめて確認できます。</p>
+    <a class="herolink" href="#itinerary"><span class="ar">🗓️</span> 旅程へ戻る <span class="ar">↑</span></a>
+    <div id="sightseeing-guide-content"><p class="guide-loading">観光ガイドを読み込んでいます…</p></div>
+  </section>
+
   <section class="practical-guide" id="practical-guide">
     <h2>🧭 ノルウェー旅行の実用ガイド</h2>
     <p class="practical-lead">現地で迷いやすい電気・水・チップから、免税、緊急時、交通、食事までをまとめました。必要な項目から確認できます。</p>
@@ -1979,7 +2076,31 @@
       </div>
     </article>
   </section>
+
 </main>
+
+<script>
+  (async () => {
+    const container = document.getElementById('sightseeing-guide-content');
+    try {
+      const response = await fetch('sightseeing-guide-content.html');
+      if (!response.ok) throw new Error('Guide content could not be loaded');
+
+      const source = await response.text();
+      const guideDocument = new DOMParser().parseFromString(source, 'text/html');
+      const guideStyle = guideDocument.querySelector('style');
+      const guideContent = guideDocument.querySelector('.wrap');
+      if (!guideStyle || !guideContent) throw new Error('Guide content is incomplete');
+
+      const shadow = container.attachShadow({ mode: 'open' });
+      const style = document.createElement('style');
+      style.textContent = guideStyle.textContent.replaceAll(':root', ':host');
+      shadow.append(style, guideContent.cloneNode(true));
+    } catch (error) {
+      container.innerHTML = '<p class="guide-load-error">観光ガイドを読み込めませんでした。公開後にページを再読み込みしてください。</p>';
+    }
+  })();
+</script>
 
 <footer>
   Norway Trip 2026 — Travel Guide<br>

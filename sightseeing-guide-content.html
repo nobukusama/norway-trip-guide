@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ノルウェー観光ガイド 2026 — 滞在地の観光・食事スポット</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#0c2530;--deep:#123c49;--slate:#3a5560;--paper:#f2f4f3;--card:#ffffff;
+    --ink:#132229;--sub:#5b6d73;--line:#dbe3e2;--aurora:#3fae86;--aurora-soft:#e5f3ec;
+    --amber:#c07a2b;--amber-soft:#f6ece0;--frost:#2f7d92;--frost-soft:#e2eef1;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+    line-height:1.75;font-size:15.5px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 80px;}
+  header.hero{position:relative;
+    background:radial-gradient(120% 90% at 20% 0%, rgba(63,174,134,.35) 0%, rgba(63,174,134,0) 55%),
+      radial-gradient(120% 90% at 85% 10%, rgba(47,125,146,.45) 0%, rgba(47,125,146,0) 60%),
+      linear-gradient(175deg,#0c2530 0%,#123c49 60%,#0c2530 100%);
+    color:#eef4f2;overflow:hidden;}
+  header.hero .inner{max-width:760px;margin:0 auto;padding:52px 22px 40px;position:relative;z-index:2;}
+  .ribbon{position:absolute;inset:0;z-index:1;opacity:.55;}
+  .eyebrow{font-family:"Fraunces",serif;letter-spacing:.28em;text-transform:uppercase;
+    font-size:11.5px;color:#9fe3c6;margin:0 0 14px;font-weight:600;}
+  header.hero h1{font-family:"Noto Serif JP",serif;font-weight:700;
+    font-size:clamp(27px,7vw,40px);line-height:1.25;margin:0 0 14px;letter-spacing:.01em;}
+  header.hero p.lead{margin:0;color:#c6d8d5;font-size:14.5px;max-width:52ch;}
+  .herolink{display:inline-flex;align-items:center;gap:8px;margin-top:22px;text-decoration:none;
+    background:#fff;color:var(--deep);font-weight:700;font-size:14px;padding:11px 20px;border-radius:999px;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .15s,box-shadow .15s;}
+  .herolink:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.3);}
+  .herolink .ar{color:var(--aurora);font-weight:800;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+  .hero-meta span{font-size:12px;letter-spacing:.03em;padding:5px 11px;
+    border:1px solid rgba(159,227,198,.4);border-radius:999px;color:#dbeee7;}
+  nav.jump{position:sticky;top:0;z-index:20;background:rgba(242,244,243,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin:0 -18px 0;padding:10px 18px;}
+  nav.jump .row{display:flex;gap:7px;overflow-x:auto;max-width:760px;margin:0 auto;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  nav.jump .row::-webkit-scrollbar{display:none;}
+  nav.jump a{flex:0 0 auto;text-decoration:none;color:var(--deep);font-weight:700;font-size:13px;
+    padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;white-space:nowrap;}
+  nav.jump a .d{color:var(--sub);font-weight:500;font-size:11px;margin-left:5px;}
+  nav.jump a.cross{background:var(--aurora);color:#fff;border-color:var(--aurora);}
+  nav.jump a.cross:hover{background:var(--deep);border-color:var(--deep);}
+  section.dest{margin-top:40px;scroll-margin-top:64px;}
+  .dest-head{border-top:2px solid var(--night);padding-top:18px;}
+  .daychip{display:inline-block;font-family:"Fraunces",serif;font-weight:600;font-size:12px;
+    letter-spacing:.06em;color:#fff;background:var(--deep);padding:4px 11px;border-radius:6px;margin-bottom:12px;}
+  .dest h2{font-family:"Noto Serif JP",serif;font-weight:700;font-size:clamp(23px,5.5vw,30px);margin:0;line-height:1.3;}
+  .dest h2 .en{display:block;font-family:"Fraunces",serif;font-weight:500;font-size:14px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--aurora);margin-top:6px;}
+  .dest .intro{color:var(--sub);font-size:14px;margin:14px 0 4px;}
+  .weather-link{display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:7px 11px;border:1px solid #b9d8e5;border-radius:999px;color:var(--fjord);background:#f2fbff;font-size:13px;font-weight:700;text-decoration:none;}
+  .weather-link:hover{background:#dff3fb;}
+  .dphoto{position:relative;margin:16px 0 2px;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(12,37,48,.12);}
+  .dphoto img{display:block;width:100%;height:215px;object-fit:cover;}
+  .dphoto .credit{position:absolute;right:8px;bottom:7px;font-size:10.5px;color:rgba(255,255,255,.92);background:rgba(12,37,48,.5);padding:2px 9px;border-radius:999px;}
+  .spot-photo{float:right;width:118px;height:86px;object-fit:cover;border-radius:9px;margin:2px 0 8px 12px;}
+  @media(max-width:480px){.dphoto img{height:160px;}.spot-photo{float:none;width:100%;height:150px;margin:0 0 10px;}}
+  .grouplabel{display:flex;align-items:center;gap:10px;margin:30px 0 4px;font-weight:700;font-size:15px;letter-spacing:.02em;}
+  .grouplabel .tag{font-family:"Fraunces",serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    font-weight:600;padding:3px 9px;border-radius:5px;}
+  .grouplabel.see .tag{background:var(--aurora-soft);color:#1f6b4d;}
+  .grouplabel.eat .tag{background:var(--amber-soft);color:#8a5316;}
+  .grouplabel.tip .tag{background:var(--frost-soft);color:#1c5c6e;}
+  .grouplabel .line{flex:1;height:1px;background:var(--line);}
+  .spot{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px 16px;margin-top:12px;position:relative;}
+  .spot.see{border-left:3px solid var(--aurora);}
+  .spot.eat{border-left:3px solid var(--amber);}
+  .spot h3{margin:0 0 5px;font-size:16.5px;font-weight:700;line-height:1.4;}
+  .spot h3 .sub{display:block;font-size:12px;font-weight:500;color:var(--sub);letter-spacing:.04em;margin-top:2px;}
+  .spot p{margin:0;font-size:14px;color:#26363c;}
+  .maplink{display:inline-block;margin:0 0 8px;font-size:12.5px;font-weight:700;color:#fff;text-decoration:none;background:var(--frost);padding:3px 12px;border-radius:999px;box-shadow:0 2px 6px rgba(12,133,153,.3);}
+  .maplink:hover{background:var(--deep);}
+  .spot .note{margin-top:9px;font-size:12.5px;color:var(--slate);background:var(--paper);border-radius:8px;padding:8px 10px;line-height:1.6;}
+  .spot .note b{color:var(--deep);font-weight:700;}
+  .voice{margin-top:9px;font-size:12.5px;color:#4a5f56;padding-left:12px;border-left:2px solid var(--aurora);font-style:normal;}
+  .voice.eatv{border-left-color:var(--amber);color:#6b543a;}
+  .tips{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--frost);border-radius:13px;padding:6px 16px 8px;margin-top:12px;}
+  .tips li{margin:11px 0;font-size:14px;list-style:none;position:relative;padding-left:20px;}
+  .tips li:before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--frost);}
+  .tips li b{color:var(--deep);}
+  ul.tips{padding-left:16px;}
+  .spot-src{margin-top:11px;padding-top:9px;border-top:1px dashed var(--line);font-size:12px;color:var(--sub);line-height:1.85;}
+  .spot-src .lbl{color:var(--slate);font-weight:700;margin-right:5px;}
+  .spot-src a{color:var(--deep);text-decoration:none;border-bottom:1px solid var(--line);white-space:normal;overflow-wrap:anywhere;}
+  .spot-src a:hover{border-bottom-color:var(--deep);}
+  .spot-src a:after{content:"↗";font-size:10px;color:var(--aurora);margin-left:2px;}
+  .spot-src .sep{color:#c3cfce;margin:0 6px;}
+  .tips .spot-src, .tip-src{border-top:1px dashed var(--line);margin-top:6px;padding-top:9px;font-size:12px;color:var(--sub);line-height:1.85;list-style:none;}
+  .tip-src:before{display:none;}
+  .tip-src{padding-left:0;}
+  .practical{margin-top:44px;background:var(--night);color:#e6eeec;border-radius:16px;padding:26px 22px;}
+  .practical h2{font-family:"Noto Serif JP",serif;font-size:20px;margin:0 0 6px;color:#fff;}
+  .practical .en{font-family:"Fraunces",serif;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:#8fd8ba;}
+  .practical .grid{display:grid;gap:14px;margin-top:18px;}
+  .practical .item{border-top:1px solid rgba(255,255,255,.14);padding-top:13px;}
+  .practical .item h4{margin:0 0 4px;font-size:14.5px;color:#bfe6d5;font-weight:700;}
+  .practical .item p{margin:0;font-size:13.5px;color:#cdd9d6;line-height:1.7;}
+  .srcnote{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:12.5px;color:var(--slate);margin-top:14px;}
+  footer{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);color:var(--sub);font-size:12px;line-height:1.8;}
+  footer a{color:var(--deep);}
+  @media (max-width:480px){
+    body{font-size:15px;}
+    .wrap{padding:0 14px 70px;}
+    header.hero .inner{padding:44px 18px 34px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="ribbon" viewBox="0 0 760 320" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,120 C160,60 260,180 420,120 S680,60 760,120 L760,320 L0,320 Z" fill="rgba(63,174,134,.18)"/>
+    <path d="M0,180 C180,120 300,230 460,175 S700,130 760,185 L760,320 L0,320 Z" fill="rgba(47,125,146,.22)"/>
+  </svg>
+  <div class="inner">
+    <p class="eyebrow">Norway · September 2026</p>
+    <h1>ノルウェー観光ガイド<br>滞在地の観光＆食事</h1>
+    <p class="lead">旅程に沿って、ベルゲン・フロム・トロムソ・オスロの見どころとグルメを、日本人旅行者のブログ・旅行記を中心にまとめました。旅程サイトと並べてお使いください。</p>
+    <a class="herolink" href="https://nobukusama.github.io/norway-trip-guide/"><span class="ar">🗓️</span> 旅程サイト（フライト・宿泊）へ <span class="ar">→</span></a>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="row">
+    <a href="#bergen">ベルゲン<span class="d">9/17</span></a>
+    <a href="#flam">フロム<span class="d">9/18</span></a>
+    <a href="#tromso">トロムソ<span class="d">9/19–21</span></a>
+    <a href="#oslo">オスロ<span class="d">9/18・21・22</span></a>
+    <a href="#market">スーパー</a>
+    <a href="#practical">基本メモ</a>
+    <a class="cross" href="https://nobukusama.github.io/norway-trip-guide/">🗓️ 旅程サイト ↗</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ BERGEN ============ -->
+<section class="dest" id="bergen">
+  <div class="dest-head">
+    <span class="daychip">9/17（木）午後 · 宿泊</span>
+    <h2>ベルゲン<span class="en">Bergen — フィヨルドの玄関口</span></h2>
+    <a class="weather-link" href="https://www.yr.no/en/forecast/daily-table/1-270080/Bergen/Vestland/Bergen" target="_blank" rel="noopener">🌦️ 最新の天気・気温（Yr）</a>
+  </div>
+  <div class="dphoto"><img src="img/bergen.jpg" alt="ブリッゲンの木造家屋群" loading="lazy"><span class="credit">Bryggen — joiseyshowaa / CC BY-SA 2.0</span></div>
+  <p class="intro">港を中心に見どころが半径ワンコインに凝縮。ホテル（スカンディック バイパルケン）は魚市場・ブリッゲンから徒歩圏で、到着後の夕方だけでも十分回れます。年間200日以上雨と言われる街なので、雨具とスニーカーは必携。</p>
+
+  <div class="grouplabel see"><span class="tag">観る</span>Sightseeing<span class="line"></span></div>
+
+  <div class="spot see">
+    <h3>ブリッゲン<span class="sub">Bryggen ／ 世界遺産・ハンザ同盟の木造倉庫群</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Bryggen%2C%20Bergen" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>三角屋根のカラフルな木造家屋が並ぶ街のシンボル。今は土産物店・ギャラリー・レストランに。奥へ続く狭い路地に入るだけなら無料で、中世にタイムスリップしたような迷路が楽しめます。</p>
+    <div class="voice">旅行記の声：対岸（魚市場側）から全景を撮るのが定番。人を避けるなら朝9時前、電飾がともる夜は昼と別の表情に。</div>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11927480" target="_blank" rel="noopener">koko sanの旅行記</a><span class="sep">/</span><a href="https://note.com/masamune_kwsk/n/nf9cf215a86aa" target="_blank" rel="noopener">マサムネの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11145655" target="_blank" rel="noopener">ぱくにくさんの旅行記</a><span class="sep">/</span><a href="https://sageocean.hatenablog.com/entry/bergen-backpacker1" target="_blank" rel="noopener">北欧旅行記（二胡さん）</a></div>
+  </div>
+
+  <div class="spot see">
+    <h3>フロイエン山<span class="sub">Fløyen ／ ケーブルカー Fløibanen で約6〜8分</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Fl%C3%B8ibanen%2C%20Bergen" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>標高約320mから街とフィヨルドを一望する絶景スポット。山頂にはカフェ・レストラン・土産店・子どもの遊び場・小さな牧場があり、散策路も。歩いて登る地元流の散歩道も人気です。</p>
+    <div class="note"><b>コツ：</b>午後は逆光になりやすいので早い時間か夕暮れ狙い。チケットはネットのQRでOK。晴天が貴重な街なので、天気が良い瞬間に優先して登るのが◎。往復の目安は夏季で約200〜220NOK。</div>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11926190" target="_blank" rel="noopener">mtkさんの旅行記</a><span class="sep">/</span><a href="https://www.takuyasakoda.com/post/bergen" target="_blank" rel="noopener">ハイキング体験記</a><span class="sep">/</span><a href="https://mottoeurope.hatenablog.com/entry/norway/bergen/1" target="_blank" rel="noopener">もーっとヨーロッパ</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11614692" target="_blank" rel="noopener">nayuさんの旅行記</a></div>
+  </div>
+
+  <div class="spot see">
+    <h3>ローセンクランツの塔 & ホーコン王の館<span class="sub">Rosenkrantztårnet / Håkonshallen ／ ブリッゲン隣</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Rosenkrantzt%C3%A5rnet%2C%20Bergen" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>中世ベルゲンの歴史を伝える塔と大広間。塔の屋上は街とフロイエン山を見渡す展望台に。周辺の公園・広場は無料で、『アナと雪の女王』の着想の地のひとつとも言われます。</p>
+    <div class="note">魚市場2階の観光案内所で買える<b>ベルゲンカード</b>があると、ここや博物館の入場・フロイエンが割引/無料に。短時間で多く回るなら検討を。</div>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11927480" target="_blank" rel="noopener">koko sanの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11838292" target="_blank" rel="noopener">ＹＦ二人旅さんの旅行記</a><span class="sep">/</span><a href="https://sageocean.hatenablog.com/entry/bergen-backpacker1" target="_blank" rel="noopener">北欧旅行記（二胡さん）</a></div>
+  </div>
+
+  <div class="grouplabel eat"><span class="tag">食べる</span>Food<span class="line"></span></div>
+
+  <div class="spot eat">
+    <h3>魚市場（フィスケトルゲット）<span class="sub">Fisketorget ／ 港沿い・ブリッゲン近く</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Fisketorget%2C%20Bergen" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>サーモン、エビ、タラバガニ、クジラ肉、シュリンプサンドなど。好きな魚介を選んで焼いてもらえ、イートインスペースも充実。大鍋で作る名物パエリアを目当てにする旅行者も。</p>
+    <div class="voice eatv">値段の心づもり：観光地価格で、サーモンのグリル1皿で3,000〜5,000円ほど。「高い」と分かった上で、港とブリッゲンを眺めながらの一皿を楽しむのが正解、という声が多数。テイクアウトなら少し安く。</div>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://chika5.com/archives/11097" target="_blank" rel="noopener">北欧の旅2025（パエリア）</a><span class="sep">/</span><a href="https://bouquet-journey.com/norway-recommended-gourmet-experiences-in-bergen/" target="_blank" rel="noopener">Bouquet Journey</a><span class="sep">/</span><a href="https://note.com/koni_te0518/n/n498e7a5f404e" target="_blank" rel="noopener">Three3の旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11505471" target="_blank" rel="noopener">初夏の北欧への旅</a></div>
+  </div>
+
+  <div class="spot eat">
+    <h3>ブリッゲロフテ & ストゥーネ<span class="sub">Bryggeloftet &amp; Stuene ／ ブリッゲン内の老舗</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Bryggeloftet%20Stuene%2C%20Bergen" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>ブリッゲンの中にある人気レストラン。夜遅めの時間でも賑わっており、タラなどノルウェーの伝統料理が味わえます。落ち着いた店内から街並みを眺めながら食事を、という旅行記が目立ちます。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://note.com/masamune_kwsk/n/nf9cf215a86aa" target="_blank" rel="noopener">マサムネの旅行記</a></div>
+  </div>
+
+  <div class="spot eat">
+    <h3>トレクロー二エン<span class="sub">Trekroneren ／ 中心部・老舗ソーセージスタンド</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Trekroneren%2C%20Bergen" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>1946年から続く名物のホットドッグ／ソーセージ屋台。トナカイやエルク（ヘラジカ）のソーセージが名物で、リンゴンベリーやカリカリオニオンをのせて食べます。数百円台で北欧のジビエを気軽に味わえ、物価の高いベルゲンで頼れる軽食スポット。街歩きの合間の小腹埋めにぴったりです。</p>
+    <div class="note"><b>気軽さ◎：</b>立ち食い／テイクアウト中心で、レストランより断然安い。「まず一本、トナカイソーセージ」が旅行者の定番です。</div>
+  </div>
+
+  <div class="spot eat">
+    <h3>スキリングボーレ（シナモンロール）<span class="sub">Skillingsbolle ／ Baker Brun など街のベーカリー</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Baker%20Brun%20Bryggen%2C%20Bergen" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>ベルゲン発祥とされる大きなシナモンロール。ブリッゲンの老舗ベーカリー <b>Baker Brun</b> をはじめ、街のパン屋やカフェの定番で、コーヒーと合わせるのが地元流。甘さは控えめで生地はしっとり、朝食やおやつに。雨宿りを兼ねてカフェで一息つくのにも向きます。</p>
+    <div class="voice eatv">コーヒー大国メモ：ノルウェーは一人あたりのコーヒー消費が世界トップクラス。街歩きに疲れたら、シナモンロール＋コーヒーの「フィーカ」的休憩を。</div>
+  </div>
+
+  <div class="grouplabel tip"><span class="tag">メモ</span>Good to know<span class="line"></span></div>
+  <ul class="tips">
+    <li>雨が非常に多い街。<b>防水ジャケット＋滑りにくいスニーカー</b>があると街歩きが快適。少し登るとすぐ坂道です。</li>
+    <li>ほぼ完全キャッシュレス。カフェもトイレもカードで払え、現金の出番はほとんどありません。</li>
+    <li>チェックインは16:00。空港バス（Flybussen）終点フェストプラッセンからホテルは徒歩1〜2分。</li>
+    <li class="tip-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11926190" target="_blank" rel="noopener">mtkさんの旅行記</a><span class="sep">/</span><a href="https://mottoeurope.hatenablog.com/entry/norway/bergen/1" target="_blank" rel="noopener">もーっとヨーロッパ</a></li>
+  </ul>
+</section>
+
+<!-- ============ FLÅM ============ -->
+<section class="dest" id="flam">
+  <div class="dest-head">
+    <span class="daychip">9/18（金）· フロム自由時間 約1時間50分（14:10着 → 16:00発）</span>
+    <h2>フロム<span class="en">Flåm — ナットシェル途中の絶景の村</span></h2>
+    <a class="weather-link" href="https://www.yr.no/en/forecast/daily-table/1-12080/Fl%C3%A5m/Vestland/Aurland" target="_blank" rel="noopener">🌦️ 最新の天気・気温（Yr）</a>
+  </div>
+  <div class="dphoto"><img src="img/flam.jpg" alt="フロムの港と山" loading="lazy"><span class="credit">Flåm — Hesse1309 / CC BY-SA 3.0</span></div>
+  <p class="intro">クルーズ到着後、フロム鉄道に乗るまでの自由時間。人口約500人の小さな村で、駅・港・店が至近に集まっています。<strong>正味1時間50分は昼食＋お土産で意外と短い</strong>ので、遠出はせず村中心で過ごすのが現実的です。</p>
+
+  <div class="grouplabel see"><span class="tag">観る</span>Sightseeing<span class="line"></span></div>
+
+  <div class="spot see">
+    <h3>村の散策 & フロム鉄道博物館<span class="sub">駅・港エリア ／ 博物館は無料</span></h3>
+    <img class="spot-photo" src="img/flam-train.jpg" alt="フロム鉄道（フロムスバーナ）" loading="lazy">
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Fl%C3%A5m%20stasjon" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>前は海、背後に急峻な山と滝が迫る絶景の村。旧駅舎を使ったフロム鉄道博物館は無料で、実物車両や資料映像など見ごたえがあり、待ち時間の見学にぴったり。港ではクルーズ船からカヤックまで大小の船の出入りを眺められます。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/os_shisetsu/10415307" target="_blank" rel="noopener">フロム駅クチコミ（フォートラベル）</a><span class="sep">/</span><a href="https://moca-life.com/visitflam" target="_blank" rel="noopener">もかのノルウェー生活ブログ</a><span class="sep">/</span><a href="https://ameblo.jp/ktakuya-64/entry-12807144404.html" target="_blank" rel="noopener">私の海外鉄道旅行（博物館無料）</a><span class="sep">/</span><a href="https://note.com/dtitours/n/nf412ceaa31cd" target="_blank" rel="noopener">たまの旅日記</a></div>
+  </div>
+
+  <div class="spot see">
+    <h3>お土産 & ブラウンチーズ<span class="sub">駅併設のショップ ／ 品揃え充実</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Fl%C3%A5m%20stasjon" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <img class="spot-photo" src="img/brunost.jpg" alt="ブラウンチーズ（ブルノスト）" loading="lazy">
+    <p>駅に併設された広めの土産店があり、限られた時間でもまとめ買い可能。試食できる<b>ブラウンチーズ（ヤギ乳のキャラメルのような茶色いチーズ）</b>は「チーズの概念が変わる」と評判で、お土産の定番です。専用のチーズスライサーと合わせて買うのも◎。</p>
+    <div class="note">ステーガスタイン展望台はバス往復が必要で、1時間50分では厳しめ。今回は村中心に絞るのがおすすめ（展望台は宿泊者向け）。</div>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://www.france-de-asobou.com/norway-flam/" target="_blank" rel="noopener">スイス＆フランスであそぼう</a><span class="sep">/</span><a href="https://oyagi-chan.com/norway-flam/" target="_blank" rel="noopener">旅トレイル</a></div>
+  </div>
+
+  <div class="grouplabel eat"><span class="tag">食べる</span>Food<span class="line"></span></div>
+
+  <div class="spot eat">
+    <h3>エーギル ブリュッゲリ パブ<span class="sub">Ægir Bryggeri Pub ／ フロム渓谷の水で醸す自家製ビール</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%C3%86gir%20Bryggeri%2C%20Fl%C3%A5m" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>北欧神話の神「エーギル」を冠したクラフトビール醸造所。ヴァイキング風の内装に大きな暖炉があり、迷ったらビールのテイスティングセットを。多くの旅行者が下船後の待ち時間に立ち寄る人気店です。</p>
+    <div class="voice eatv">旅行記の声：フロム鉄道を降りた人の多くが次のフェリー/列車までここで過ごすため一時的に混雑。空いていそうなら早めに確保を。</div>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://note.com/masamune_kwsk/n/nf9cf215a86aa" target="_blank" rel="noopener">マサムネの旅行記</a></div>
+  </div>
+
+  <div class="spot eat">
+    <h3>駅前のベーカリー / Coop<span class="sub">パン・軽食 ／ 短時間ランチ向き</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Coop%20Fl%C3%A5m" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>港・鉄道の出発前は混みやすいので、パンは早めに購入するのが吉。店数が多くなくフェリー待ちの人で混み合うため、スーパー Coop で軽食を調達してフロム鉄道の車内で食べるのも時短の手です。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/os_shisetsu/10415307" target="_blank" rel="noopener">フロム駅クチコミ（フォートラベル）</a><span class="sep">/</span><a href="https://note.com/masamune_kwsk/n/nf9cf215a86aa" target="_blank" rel="noopener">マサムネの旅行記（昼食探し）</a></div>
+  </div>
+
+  <div class="spot eat">
+    <h3>フルクロア（温かい食事）<span class="sub">Furukroa Café ／ 駅・港のすぐそば</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Furukroa%20Fl%C3%A5m" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>フロムの港エリアにあるカフェテリア。スープやサンドイッチ、温かい軽食をセルフサービスで手早く取れるので、<b>正味1時間50分の限られた時間でもさっと昼食</b>を済ませたい人に便利。ベーカリーや土産コーナーも併設で、雨天時の待避所としても重宝します。</p>
+    <div class="note">短時間の現実解：着いたらまず食事の当たりをつけ、混む前に確保 → 残り時間で村の散策＆お土産、の順が回しやすいです。</div>
+  </div>
+
+  <div class="grouplabel tip"><span class="tag">メモ</span>Good to know<span class="line"></span></div>
+  <ul class="tips">
+    <li>次のフロム鉄道（16:00発）は<b>自由席</b>。滝ショースフォッセンが見える<b>進行方向右側</b>の席が人気なので、早めにホームで並ぶのがおすすめ。</li>
+    <li>フロム鉄道は途中<b>ショースの滝で約5分停車</b>し、ホームに降りて撮影できます（妖精のパフォーマンス演出も）。車内は多言語の日本語解説あり。</li>
+    <li>スーツケースは各自持ち運び。身軽な服装＋防風ジャケットで。フィヨルドのデッキ・山岳部は冷えます。</li>
+    <li class="tip-src"><span class="lbl">📒 参考：</span><a href="https://blog.mohara.jp/scandiavian-travel-20170912-05/" target="_blank" rel="noopener">Cafe de Cooky（ショースの滝）</a><span class="sep">/</span><a href="https://ameblo.jp/ktakuya-64/entry-12807144404.html" target="_blank" rel="noopener">私の海外鉄道旅行（座席）</a></li>
+  </ul>
+</section>
+
+<!-- ============ TROMSØ ============ -->
+<section class="dest" id="tromso">
+  <div class="dest-head">
+    <span class="daychip">9/19（土）着 〜 9/21（月）· オーロラ2夜</span>
+    <h2>トロムソ<span class="en">Tromsø — 北極圏のパリ、オーロラの街</span></h2>
+    <a class="weather-link" href="https://www.yr.no/en/forecast/daily-table/1-305409/Troms%C3%B8/Troms/Troms%C3%B8" target="_blank" rel="noopener">🌦️ 最新の天気・気温（Yr）</a>
+  </div>
+  <div class="dphoto"><img src="img/tromso.jpg" alt="トロムソ橋と北極教会" loading="lazy"><span class="credit">Tromsø — Virtual-Pano / CC BY-SA 4.0</span></div>
+  <p class="intro">「北のパリ」と呼ばれる北極圏最大の街。昼は街歩き＆展望、夜はオーロラという組み立てがしやすいのが魅力。ホテル（クオリティ サガ）はバス停が目の前で、ミニバスチェイスの集合にも便利です。中心部はコンパクトですが、目的地は見た目より遠いのでバス活用を。</p>
+
+  <div class="grouplabel see"><span class="tag">観る</span>Sightseeing<span class="line"></span></div>
+
+  <div class="spot see">
+    <h3>北極教会<span class="sub">Ishavskatedralen（トロムスダーレン教会）／ 対岸・バスで橋を渡る</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Ishavskatedralen%2C%20Troms%C3%B8" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>三角屋根とステンドグラスが美しい街のシンボル。全面ガラス張りで、日照の少ない時期も内部が自然光で明るく照らされます。ゴシック様式とは対照的なシンプルでモダンな造りで、モザイク画のようなステンドグラスが見どころ。橋を渡った対岸にあり、ケーブルカーとセットで回るのが定番です。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11915442" target="_blank" rel="noopener">トナクさんの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11940953" target="_blank" rel="noopener">もみの木さんの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/10346262" target="_blank" rel="noopener">真月さんの旅行記（ステンドグラス）</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11574445" target="_blank" rel="noopener">はらっちさんの旅行記</a></div>
+  </div>
+
+  <div class="spot see">
+    <h3>フィエルハイセン（ストールシュタイネン山）<span class="sub">Fjellheisen ／ ケーブルカー約4〜5分・標高421m</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Fjellheisen%2C%20Troms%C3%B8" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>トロムソ島・街並み・フィヨルドを一望する絶景展望台。白いトロムソ橋や三角屋根の連なりが美しく、晴れた夜はここからオーロラを狙う人も。山頂にはレストランと屋外展望デッキがあります。</p>
+    <div class="note"><b>コツ：</b>往復は約395〜415NOK（約6,000〜7,000円）。空いているのは<b>10時台</b>。山頂は風が強く体感が下がるので防寒必須。北極教会からは徒歩10分強でつながっています。</div>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11915442" target="_blank" rel="noopener">トナクさんの旅行記</a><span class="sep">/</span><a href="https://note.com/ziosan/n/n556b7063f95e" target="_blank" rel="noopener">ØZの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11940953" target="_blank" rel="noopener">もみの木さんの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11574445" target="_blank" rel="noopener">はらっちさんの旅行記</a></div>
+  </div>
+
+  <div class="spot see">
+    <h3>ポラリア & 街歩き<span class="sub">Polaria／Storgata通り・北極圏博物館・北方美術館</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Polaria%2C%20Troms%C3%B8" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>ポラリアは北極圏の生き物を展示する体験型施設で、アザラシの餌やりが人気。屋内なので荒天時にも重宝します。中心部の Storgata 通りや港の散策、観光案内所（Visit Tromsø）でもらえる<b>北極圏到達証明書（約90NOK・日付と名前入り）</b>も旅の記念に。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://note.com/ziosan/n/n556b7063f95e" target="_blank" rel="noopener">ØZの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11574445" target="_blank" rel="noopener">はらっちさんの旅行記（到達証明書）</a></div>
+  </div>
+
+  <div class="grouplabel eat"><span class="tag">食べる</span>Food<span class="line"></span></div>
+
+  <div class="spot eat">
+    <h3>Bardus Bistro<span class="sub">中心部 ／ トナカイ料理</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Bardus%20Bistro%2C%20Troms%C3%B8" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>トナカイ肉が「柔らかくて食べやすい」と評判のビストロ。ヨーロッパの肉料理にありがちな重さがなく、ペロッと食べられたという声も。北極圏らしいジビエを試すのにおすすめの一軒です。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://sawakoyoshida.com/archives/20979" target="_blank" rel="noopener">吉田佐和子オフィシャルサイト</a></div>
+  </div>
+
+  <div class="spot eat">
+    <h3>Skarven（Biffhuset Skarven）<span class="sub">Strandtorget 1 ／ 港沿い・地元人気</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Skarven%2C%20Troms%C3%B8" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>港のそばにある地元で人気のレストラン。ビール込みで4,000円ほどという価格帯で、しっかり食事したいときに。北極海の食材を味わえる港エリアの定番です。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://note.com/ziosan/n/n556b7063f95e" target="_blank" rel="noopener">ØZの旅行記</a></div>
+  </div>
+
+  <div class="spot eat">
+    <h3>Ølhallen（Mack ビール）<span class="sub">港エリア ／ 1877年創業の老舗醸造所ビアホール</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%C3%98lhallen%2C%20Troms%C3%B8" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>トロムソの老舗醸造所 Mack が営む歴史あるビアホール。トナカイのホットドッグや煮込みなどコクのある郷土料理とビールの相性が抜群。広場前のカフェも便利ですが、一本路地に入ると地元の良店に出会えます。</p>
+    <div class="voice eatv">節約メモ：スーパー KIWI（中心部・Fredrik Langes gate 等）でサンドイッチやパンを買えば外食費を抑えられます。街には「世界最北のマクドナルド」も。</div>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11915442" target="_blank" rel="noopener">トナクさんの旅行記（KIWI）</a><span class="sep">/</span><a href="https://note.com/ziosan/n/n556b7063f95e" target="_blank" rel="noopener">ØZの旅行記</a></div>
+  </div>
+
+  <div class="spot eat">
+    <h3>ラケッタ<span class="sub">Raketten Bar & Pølse ／ 中心部ストルトルゲット広場・世界最小級のバー</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Raketten%20Bar%20P%C3%B8lse%2C%20Troms%C3%B8" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>1911年から広場に立つ、ノルウェーで最も小さいとも言われる屋台バー。名物は<b>トナカイソーセージのホットドッグ</b>で、寒い夜の街歩きの合間にぴったり。数百円台で温かいものが食べられ、オーロラ待ちの前の腹ごしらえにも便利な、地元の名物スタンドです。</p>
+    <div class="note"><b>寒い夜の味方：</b>座席はほぼなく立ち食いスタイル。冷えた体に温かいソーセージが染みます。</div>
+  </div>
+
+  <div class="spot eat">
+    <h3>カフェ休憩（シナモンロール）<span class="sub">Risø／Kaffebønna など中心部のカフェ</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Ris%C3%B8%20Mat%20og%20Kaffebar%2C%20Troms%C3%B8" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>北極圏の街だけにカフェ文化が根付き、こだわりの一杯を出す店が点在。<b>Risø Mat &amp; Kaffebar</b> や広場の <b>Kaffebønna</b> は、シナモンロールなどの菓子とコーヒーで暖まる定番。日照の短い季節、屋内でほっと一息つける場所を押さえておくと街歩きが快適になります。</p>
+  </div>
+
+  <div class="dphoto"><img src="img/aurora.jpg" alt="トロムソのオーロラ" loading="lazy"><span class="credit">Aurora, Tromsø — Andi Gentsch / CC BY-SA 2.0</span></div>
+  <div class="grouplabel tip"><span class="tag">メモ</span>🌌 オーロラのコツ（9月中旬）<span class="line"></span></div>
+  <ul class="tips">
+    <li><b>9月でも見えます。</b>オーロラのシーズンは9月中旬〜4月上旬。「晴れて空が暗ければ9月でも見られた」という日本人旅行者の実体験ブログが複数あります。</li>
+    <li>目安は<b>3日に1回・1晩あたり50〜70%</b>で、実際は天候（雲）次第。<b>9/19・20の2夜チェイスは確率を上げる好判断</b>です。</li>
+    <li>ミニバスチェイスの利点は、<b>雲を避けて晴れ間へ移動できる</b>こと。市内でも見えることはありますが、光害の少ない郊外が有利。</li>
+    <li>市内で軽く狙うなら、テレグラフブクタ（海側が開けて暗い）やケーブルカー山頂が定番。強めのオーロラなら街中でも視認できたという声も。</li>
+    <li>防寒：沿岸部で気温自体は穏やか（9月はおおむね0〜9℃）ですが、<b>海風で体感が大きく下がります</b>。防風・防水＋重ね着で、足元の冷え対策（ホッカイロ）も。</li>
+    <li>撮影：スマホでは写しにくいので、可能なら<b>カメラ＋三脚</b>があると満足度が上がります。当日は「まず雲、次にKp指数」の順でチェックを。</li>
+    <li class="tip-src"><span class="lbl">📒 参考：</span><a href="https://k-ktrip.com/tromso-aurora-summer-september/" target="_blank" rel="noopener">Kazuの気ままな旅（9月）</a><span class="sep">/</span><a href="https://hokkyokunavi.com/norway-chances-of-seeing-the-northern-lights-in-tromso/" target="_blank" rel="noopener">ホッキョクナビ（確率）</a><span class="sep">/</span><a href="https://hokkyokunavi.com/norway-can-you-see-the-northern-lights-from-tromso-city-centre/" target="_blank" rel="noopener">ホッキョクナビ（市内観賞）</a><span class="sep">/</span><a href="https://note.com/at_yamag/n/na6611a8d4cf0" target="_blank" rel="noopener">AT_YAMAG（ツアーなし）</a><span class="sep">/</span><a href="https://note.com/pandaruma_essay/n/nd4b3754afb7e" target="_blank" rel="noopener">ぱんだるま（ツアーレポ）</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/10749897" target="_blank" rel="noopener">まんださんの旅行記</a><span class="sep">/</span><a href="https://hokuohkurashi.com/note/111661" target="_blank" rel="noopener">北欧、暮らしの道具店</a></li>
+  </ul>
+</section>
+
+<!-- ============ OSLO ============ -->
+<section class="dest" id="oslo">
+  <div class="dest-head">
+    <span class="daychip">9/18（金）夜着 · 9/21（月）午後 · 9/22（火）午前</span>
+    <h2>オスロ<span class="en">Oslo — 水辺のアートと現代建築</span></h2>
+    <a class="weather-link" href="https://www.yr.no/en/forecast/daily-table/1-72837/Oslo/Oslo/Oslo" target="_blank" rel="noopener">🌦️ 最新の天気・気温（Yr）</a>
+  </div>
+  <div class="dphoto"><img src="img/oslo.jpg" alt="オスロ・オペラハウス" loading="lazy"><span class="credit">Oslo Opera House — Christian David / CC BY-SA 4.0</span></div>
+  <p class="intro">オスロ中央駅を起点に、港側のビヨルヴィカ、市庁舎、王宮周辺を回るコンパクトな計画。実際に観光できるのは<strong>9/21（月）の午後と9/22（火）の午前</strong>です。市内の乗り物は<strong>トラムと地下鉄だけ</strong>を使い、停留所から入口までの短い徒歩を組み合わせます。</p>
+
+  <div class="grouplabel tip"><span class="tag">旅程</span>今回の2日間プラン<span class="line"></span></div>
+  <ul class="tips">
+    <li><b>9/21（月）</b>：14:30ホテルに荷物を預ける → トラム19番でBjørvika → 15:00〜17:15 MUNCH → 17:20〜18:00 オペラハウス外観・屋上 → 18:05〜18:50 オスロ公共図書館。</li>
+    <li><b>9/22（火）</b>：8:15チェックアウト → トラム12番でKontraskjæret → <b>9:00〜9:45 オスロ市庁舎</b> → トラム12番でSolli → 10:15〜11:10 王宮外観・王宮公園 → Nationaltheatretから地下鉄で中央駅へ。</li>
+    <li><b>空港には14:00までに到着</b>：11:30頃から昼食、12:30に荷物受取、13:10頃にOslo SからFlytogetまたはVyに乗り、13:35〜13:50頃の空港着を目指します。</li>
+    <li>国立美術館とノーベル平和センターは、この短い日程では見送ります。運行変更があるため、乗車前に<a href="https://ruter.no/en/planlegg-reise/rutetabeller-og-linjekart/tram" target="_blank" rel="noopener">Ruter公式</a>で乗り場と時刻を確認してください。</li>
+  </ul>
+
+  <div class="grouplabel see"><span class="tag">観る</span>Sightseeing<span class="line"></span></div>
+
+  <div class="spot see">
+    <h3>オスロ・オペラハウス<span class="sub">Operahuset ／ 中央駅から徒歩すぐ・屋根に上れる</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Oslo%20Opera%20House" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>白い大理石の傾斜した屋根を歩いて上れる、世界でも珍しい建築。氷山を思わせる建物は海辺の風景によく映え、屋上からオスロフィヨルドと街並みを無料で一望できます。今回はMUNCHの後、<b>17:20〜18:00に外観と屋上</b>を見学します。</p>
+    <div class="note"><b>今回の見方：</b>夕方はホワイエよりも外観・屋上を中心に。雨天や強風時は、滑りやすい屋根を無理に上らないこと。</div>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11407422" target="_blank" rel="noopener">ta〜koさんの旅行記</a><span class="sep">/</span><a href="https://note.com/maitabi2/n/nae7abd5d22ba" target="_blank" rel="noopener">はらよわの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11125856" target="_blank" rel="noopener">hirominさんの旅行記</a></div>
+  </div>
+
+  <div class="spot see">
+    <h3>ムンク美術館<span class="sub">MUNCH ／ オペラハウス隣・13階建て</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=MUNCH%20museum%20Oslo" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>2021年にビヨルヴィカへ移転した13階建ての美術館。「叫び」「マドンナ」などの代表作に加え、企画展、ショップ、カフェ、展望スペースもあります。今回は<b>月曜15:00〜17:15</b>に鑑賞します。</p>
+    <div class="note"><b>月曜は18:00閉館：</b>入館後は先に見たい展示を確認し、「叫び」の展示室を優先。撮影可否は当日の掲示に従ってください。</div>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11914810" target="_blank" rel="noopener">ももへこさんの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11407422" target="_blank" rel="noopener">ta〜koさんの旅行記</a></div>
+  </div>
+
+  <div class="spot see">
+    <h3>オスロ公共図書館<span class="sub">Deichman Bjørvika ／ 月〜金曜8:00〜22:00・入館無料</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Deichman%20Bj%C3%B8rvika" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <a class="maplink" href="https://deichman.no/bibliotekene/bjorvika" target="_blank" rel="noopener">🔗 公式サイト</a>
+    <p>地上5階のモダンな公共図書館。シアタールーム、3Dプリンターやミシンを備えたワークスペース、カフェなど、図書館を超えた設備が充実しています。今回はオペラハウスの後、<b>18:05〜18:50</b>に館内と眺望スペースを見学します。</p>
+  </div>
+
+  <div class="spot see">
+    <h3>オスロ市庁舎<span class="sub">Rådhuset ／ 毎日9:00〜16:00・入場無料</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Oslo%20City%20Hall" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <a class="maplink" href="https://www.oslo.kommune.no/oslo-city-hall/opening-hours/" target="_blank" rel="noopener">🔗 公式サイト</a>
+    <p>ノーベル平和賞の授賞式会場として知られる市庁舎。巨大壁画や2階の「ムンクの間」を見学できます。今回は火曜の<b>開館9:00に入館し、9:45まで</b>見学。入口の保安検査を見込み、少し早めに到着します。</p>
+    <div class="note"><b>アクセス：</b>Jernbanetorgetからトラム12番でKontraskjæretへ。停留所から徒歩約3分。式典などによる臨時閉館は前日に公式サイトで再確認。</div>
+  </div>
+
+  <div class="spot see">
+    <h3>王宮・王宮公園<span class="sub">Det kongelige slott / Slottsparken ／ 今回は外観と公園</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=The%20Royal%20Palace%20Oslo" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <a class="maplink" href="https://www.royalcourt.no/visits-and-cultural-activities/visit-the-royal-palace" target="_blank" rel="noopener">🔗 公式サイト</a>
+    <p>カール・ヨハン通りの西端に立つ王宮と、市民の憩いの場である緑豊かな王宮公園。<b>2026年の王宮内部見学は6月20日〜8月16日</b>のため、9月22日は外観と公園を10:15〜11:10に見学します。</p>
+    <div class="note"><b>アクセス：</b>市庁舎近くのKontraskjæretからトラム12番でSolliへ移動し、徒歩約8〜10分。帰りはNationaltheatretから地下鉄でJernbanetorgetへ。</div>
+  </div>
+
+  <div class="spot see">
+    <h3>カールヨハン通り<span class="sub">Karl Johans gate ／ 中央駅〜王宮を結ぶ約1.3km</span></h3>
+    <img class="spot-photo" src="img/karljohan.jpg" alt="カールヨハン通り" loading="lazy">
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Karl%20Johans%20gate%2C%20Oslo" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>大聖堂・国立劇場・グランドホテルが並ぶメインストリート。西半分は歩行者天国で、カフェや小さなショップ巡りが楽しい。王宮側は小高く、振り返ると駅方向へ街が広がる眺めが気持ちいいです。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11407422" target="_blank" rel="noopener">ta〜koさんの旅行記</a><span class="sep">/</span><a href="https://smako-one.hatenablog.com/entry/2020/06/25/231153" target="_blank" rel="noopener">癒しのノルウェー旅行記</a></div>
+  </div>
+
+  <div class="spot see">
+    <h3>ヴィーゲラン公園（フログネル公園）<span class="sub">Vigelandsparken ／ 入場無料・トラム15〜20分</span></h3>
+    <img class="spot-photo" src="img/vigeland.jpg" alt="ヴィーゲラン公園のモノリッテン" loading="lazy">
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vigelandsparken%2C%20Oslo" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>彫刻家ヴィーゲランの200体超の作品が「人間の一生」をテーマに並ぶ公園。中央の塔「モノリッテン」と、地団駄を踏む「おこりんぼう（Sinnataggen）」が名物。<b>正門から入る</b>と作品の並びを意図通りに辿れます。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11914810" target="_blank" rel="noopener">ももへこさんの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11407422" target="_blank" rel="noopener">ta〜koさんの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11125856" target="_blank" rel="noopener">hirominさんの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/10491956" target="_blank" rel="noopener">キヌちちさんの旅行記</a></div>
+  </div>
+
+  <div class="spot see">
+    <h3>アーケルブリッゲ & アーケシュフース城<span class="sub">Aker Brygge / Akershus ／ 港沿いの再開発エリア</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Aker%20Brygge%2C%20Oslo" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>造船所跡を再開発した海沿いのエリアで、レストラン・バー・遊歩道が集まるグルメ&散歩スポット。隣接する中世のアーケシュフース城とあわせて、夕方の海辺の散策が心地よい一帯です。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://note.com/maitabi2/n/nae7abd5d22ba" target="_blank" rel="noopener">はらよわの旅行記</a><span class="sep">/</span><a href="https://www.whhunternow.com/entry/oslotrip2022" target="_blank" rel="noopener">ワーホリハンターなう</a></div>
+  </div>
+
+  <div class="grouplabel eat"><span class="tag">食べる</span>Food<span class="line"></span></div>
+
+  <div class="spot eat">
+    <h3>The Salmon<span class="sub">Strandpromenaden 11 ／ サーモン尽くし・港沿いテラス</span></h3>
+    <img class="spot-photo" src="img/salmon.jpg" alt="ノルウェーサーモンのグリル" loading="lazy">
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=The%20Salmon%20restaurant%2C%20Oslo" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>その名の通りサーモン専門。ホットスモークドサーモンは「ふわふわで脂がのって美味しい」と評判で、中心地でアクセス良好。平日ランチなら予約なしでも入りやすいという声。ランチ1皿4,000円ほどが目安です。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://note.com/maitabi2/n/nae7abd5d22ba" target="_blank" rel="noopener">はらよわの旅行記</a><span class="sep">/</span><a href="http://ikutaaas.blog/%E3%80%90%E3%83%8E%E3%83%AB%E3%82%A6%E3%82%A7%E3%83%BC%E6%97%85%E8%A1%8C%E3%80%91%E3%82%AA%E3%82%B9%E3%83%AD%E3%81%A7%E3%82%B5%E3%83%BC%E3%83%A2%E3%83%B3%E3%82%92%E9%A3%9F%E3%81%B9%E5%B0%BD%E3%81%8F/" target="_blank" rel="noopener">ロンドン駐在妻の生活記</a></div>
+  </div>
+
+  <div class="spot eat">
+    <h3>Louise Restaurant &amp; Bar<span class="sub">Stranden 3 ／ アーケルブリッゲの港側</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Aker%20Brygge%2C%20Oslo" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>港をさらに進んだ先のシーフード店。「サーモンのトリュフ刺身ポン酢」など和のひねりを利かせたメニューも。夜遅め（20:30過ぎ）でも予約なしで入れた、という体験談があります。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://bouquet-journey.com/recommended-gourmet-experiences-in-oslo/" target="_blank" rel="noopener">Bouquet Journey</a></div>
+  </div>
+
+  <div class="spot eat">
+    <h3>Oslo Street Food / Mathallen<span class="sub">フードホール ／ 比較的リーズナブル</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Mathallen%20Oslo" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>世界各国の料理が集まる屋内フードホール。物価の高いオスロで気軽に食べたいときの定番で、観光の合間のランチや軽めの夕食に。ノルウェーはコーヒー大国なので、街歩きに疲れたらカフェやシナモンロールの休憩も◎。</p>
+    <div class="spot-src"><span class="lbl">📒 参考：</span><a href="https://www.whhunternow.com/entry/oslotrip2022" target="_blank" rel="noopener">ワーホリハンターなう（カフェ）</a></div>
+  </div>
+
+  <div class="spot eat">
+    <h3>フィスケリエット<span class="sub">Fiskeriet Youngstorget ／ Youngstorget 2b ／ 魚屋併設の食堂</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Fiskeriet%20Youngstorget%20Oslo" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>鮮魚店が営むカジュアルなシーフード食堂で、名物は<b>フィッシュ&チップス</b>やフィッシュスープ。高級店より気軽な価格帯で、しっかり魚を食べたいランチに便利。中心部の Youngstorget 広場に面し、観光の動線に組み込みやすい一軒です。</p>
+  </div>
+
+  <div class="spot eat">
+    <h3>シーヴェルキオスケン<span class="sub">Syverkiosken ／ Maridalsveien 45 ／ 昔ながらのホットドッグ売店</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Syverkiosken%20Oslo" target="_blank" rel="noopener">📍 Googleマップで見る</a>
+    <p>オスロに残る数少ない伝統的なpølse（ホットドッグ）キオスク。<b>ロンパ（薄いポテトブレッド）で巻くローカルスタイル</b>や、カリカリオニオン・シュリンプサラダなどのトッピングが名物。物価の高いオスロで、数百円で小腹を満たせる庶民派の味です。</p>
+    <div class="note">グリューネルロッカ地区の散策途中に。ノルウェーの国民食「pølse」を気軽に試すならここ。</div>
+  </div>
+
+  <div class="grouplabel tip"><span class="tag">メモ</span>Good to know<span class="line"></span></div>
+  <ul class="tips">
+    <li>ホテルはオスロ中央駅舎内。<b>9/21は14:30に荷物を預けて出発</b>し、9/22は8:15にチェックアウトして荷物を預けます。</li>
+    <li>市内移動は<b>トラム・地下鉄のみ</b>。月曜はトラム19番、火曜はトラム12番と地下鉄を利用し、停留所から施設までは短い徒歩です。</li>
+    <li>9/22は<b>13:10頃にOslo Sを出発し、14:00までに空港着</b>。中央駅↔空港はFlytogetまたはVyで約20〜25分。</li>
+    <li>広場・駅・港周辺はスリ・置き引きに注意。バッグは前に、貴重品は分散して。</li>
+    <li class="tip-src"><span class="lbl">📒 参考：</span><a href="https://4travel.jp/travelogue/11914810" target="_blank" rel="noopener">ももへこさんの旅行記</a><span class="sep">/</span><a href="https://4travel.jp/travelogue/11125856" target="_blank" rel="noopener">hirominさんの旅行記</a></li>
+  </ul>
+</section>
+
+<!-- ============ SUPERMARKET ============ -->
+<section class="dest" id="market">
+  <div class="dest-head">
+    <span class="daychip">どの街でも · 節約の味方</span>
+    <h2>スーパーマーケット<span class="en">Supermarket — 物価の高い国での食費対策</span></h2>
+  </div>
+  <p class="intro">外食が1皿4,000〜5,000円のノルウェーでは、スーパーの活用が旅の財布を大きく助けます。<strong>1日1食はスーパーの惣菜やサンドイッチで軽く</strong>、が定番。サンドイッチ・サラダ・パン・果物・チーズなどが手頃で、朝食やフロム鉄道・空港での軽食調達にも便利です。以下は旅行者がよく使う主要チェーンです。</p>
+
+  <div class="grouplabel eat"><span class="tag">安い</span>ディスカウント系（普段使い）<span class="line"></span></div>
+
+  <div class="spot eat">
+    <h3>キーウィ<span class="sub">KIWI ／ 緑の看板・最も見かける格安チェーン</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=KIWI%20dagligvare" target="_blank" rel="noopener">📍 近くの店舗を探す</a>
+    <p>緑の看板が目印の全国チェーンで、街なかで一番よく見かけます。価格が安く営業時間も長め（夜遅くまで開いている店も多い）ので、旅行者の"とりあえずここ"的存在。惣菜・サンドイッチ・パン・果物・水などが揃い、トロムソやオスロの中心部にも店舗があります。</p>
+    <div class="note"><b>使いどころ：</b>到着日の夕食や翌朝食の買い出しに。ホテル近くのKIWIを1軒把握しておくと安心です。</div>
+  </div>
+
+  <div class="spot eat">
+    <h3>レマ1000<span class="sub">Rema 1000 ／ 青い看板・シンプルな激安店</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Rema%201000" target="_blank" rel="noopener">📍 近くの店舗を探す</a>
+    <p>KIWIと並ぶディスカウントの二大巨頭。品揃えを絞って価格を抑えるスタイルで、パンや乳製品、基本の食料品が安く買えます。KIWIと見つけた方へ、くらいの感覚で使えます。</p>
+  </div>
+
+  <div class="spot eat">
+    <h3>コープ<span class="sub">Coop（Extra／Prix／Mega／Obs）／ 大小さまざまな協同組合系</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Coop%20Extra" target="_blank" rel="noopener">📍 近くの店舗を探す</a>
+    <p>店舗形態が幅広い協同組合系チェーン。<b>Coop Extra</b> は割安、<b>Coop Mega／Obs</b> は品揃え豊富と、看板で規模がわかります。フロムの村にも Coop があり、ナットシェルの待ち時間の軽食調達に便利でした。</p>
+  </div>
+
+  <div class="grouplabel eat"><span class="tag">品揃え</span>フルサービス系（お土産・惣菜も）<span class="line"></span></div>
+
+  <div class="spot eat">
+    <h3>メニー<span class="sub">Meny ／ 品揃え最強・惣菜と鮮魚コーナーも</span></h3>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Meny%20supermarked" target="_blank" rel="noopener">📍 近くの店舗を探す</a>
+    <p>ディスカウント系よりやや高めですが、品揃えは随一。惣菜・寿司・サラダバー・鮮魚や精肉のカウンター、チーズやお土産向きの食品も充実しています。<b>ブラウンチーズやチョコなどお土産のまとめ買い</b>、ちゃんとした惣菜で食事を済ませたいときに重宝します。</p>
+  </div>
+
+  <div class="grouplabel tip"><span class="tag">買う</span>🛒 スーパーで買いたいもの<span class="line"></span></div>
+  <ul class="tips">
+    <li><b>ブラウンチーズ（Brunost／Gudbrandsdalsost）</b>：定番土産。軽くて配りやすく、スーパーなら土産店より割安。チーズスライサーも一緒に。</li>
+    <li><b>フレイアのミルクチョコ（Freia Melkesjokolade）</b>と<b>クックルンシュ（Kvikk Lunsj）</b>：国民的チョコ。ハイキングのお供＝クックルンシュはお土産にも人気。</li>
+    <li><b>魚の缶詰・チューブ入りキャビア（Kalles／Mills）・フィッシュボール</b>：ノルウェーの食卓の味を手軽に。パンにのせて朝食に。</li>
+    <li><b>サンドイッチ・サラダ・シナモンロール</b>：そのまま昼食に。物価の高い国での強い味方です。</li>
+  </ul>
+
+  <div class="grouplabel tip"><span class="tag">メモ</span>Good to know<span class="line"></span></div>
+  <ul class="tips">
+    <li><b>日曜は休み・短縮営業の店が多い</b>。大型店ほど閉まりがちで、日曜は小型の「Joker」やキオスク（Narvesen等）頼みに。<b>9/20（日）トロムソ</b>は前日までに買い足しておくと安心。</li>
+    <li><b>ペットボトル・缶にはデポジット（Pant）</b>。店頭の回収機（Pant）に返すとお金が戻ります。レシートをレジで精算。</li>
+    <li><b>水道水がおいしく無料</b>。ミネラルウォーターをわざわざ買わず、マイボトルに給水すれば節約に。</li>
+    <li>支払いはほぼカード／タッチ決済でOK。セルフレジも一般的です。</li>
+  </ul>
+</section>
+
+<!-- ============ PRACTICAL ============ -->
+<div class="practical" id="practical">
+  <p class="en">Before you go</p>
+  <h2>旅を通しての基本メモ</h2>
+  <div class="grid">
+    <div class="item">
+      <h4>💳 ほぼ完全キャッシュレス</h4>
+      <p>カフェ・スーパー・トイレのチップまでカードでOK。現金はほとんど不要で、無理にクローネへ両替しなくても困らない、という声が大半です。</p>
+    </div>
+    <div class="item">
+      <h4>💰 物価が非常に高い</h4>
+      <p>外食は1皿4,000〜5,000円が当たり前。<b>スーパー（KIWI／Coop／Rema1000）</b>やテイクアウトを使い、1日1食は軽く済ませると財布に優しいです。</p>
+    </div>
+    <div class="item">
+      <h4>🧥 9月中旬の服装</h4>
+      <p>重ね着＋防風・防水ジャケットが基本。フィヨルドのデッキ、山岳部、トロムソは特に冷えます。歩きやすい防水スニーカーを。</p>
+    </div>
+    <div class="item">
+      <h4>🌦️ 天気は変わりやすい</h4>
+      <p>特にベルゲンとノルウェー沿岸は雨が多く、天気が急変します。「今悪くても30分後には晴れる」ことも。傘より防水ウェアが実用的。</p>
+    </div>
+  </div>
+</div>
+
+<div class="srcnote">
+  📒 <b>出典について：</b>本ガイドは、フォートラベル・note・個人旅行ブログなど<b>日本人旅行者の旅行記</b>を主な参考に、公式サイトやガイド情報で補足してまとめています。各スポットの下に参考にした旅行記へのリンクを付けました。営業時間・料金・チケット方式などは変わることがあるため、訪問前に各公式サイトで最終確認してください。金額は目安（1NOK≒16円換算）です。
+</div>
+
+<div style="text-align:center;margin-top:36px;">
+  <a class="herolink" style="background:var(--deep);color:#fff;box-shadow:0 6px 18px rgba(12,37,48,.2);" href="https://nobukusama.github.io/norway-trip-guide/"><span style="color:#8fd8ba;">🗓️</span> 旅程サイト（フライト・宿泊）へ <span style="color:#8fd8ba;">→</span></a>
+</div>
+
+<footer>
+  ノルウェー観光ガイド 2026 ／ 旅程サイトの companion guide<br>
+  滞在地：ベルゲン・フロム・トロムソ・オスロ ｜ 観光スポット × 食事スポット × オーロラのコツ<br>
+  📷 写真：Wikimedia Commons（各写真に撮影者・ライセンスを表示）
+</footer>
+
+</div>
+</body>
+</html>
