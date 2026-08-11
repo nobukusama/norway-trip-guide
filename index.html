@@ -654,7 +654,6 @@
   .practical-panel.tax { border-top-color: #d89028; }
   .practical-panel.safety { border-top-color: #c84d4d; }
   .practical-panel.transport { border-top-color: var(--aurora-green); }
-  .practical-panel.food { border-top-color: var(--aurora-purple); }
   .practical-panel h3 { font-size: 1.25rem; }
   .practical-summary {
     margin: 0 0 16px;
@@ -724,66 +723,9 @@
     font-weight: 700;
     color: var(--fjord-blue);
   }
-  .food-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin: 14px 0 0;
-    padding: 0;
-    list-style: none;
-  }
-  .food-list li {
-    padding: 13px 14px;
-    border-radius: 12px;
-    background: #f6f1fb;
-  }
-  .food-list strong {
-    display: block;
-    color: var(--aurora-purple);
-    margin-bottom: 3px;
-  }
-  .food-photo-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin: 16px 0 18px;
-  }
-  .food-photo {
-    min-width: 0;
-    margin: 0;
-    overflow: hidden;
-    border: 1px solid #e1d8eb;
-    border-radius: 13px;
-    background: #fff;
-    box-shadow: 0 3px 12px rgba(45, 34, 62, 0.1);
-  }
-  .food-photo img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-  }
-  .food-photo.salmon img { object-position: center 48%; }
-  .food-photo figcaption {
-    padding: 10px 12px;
-    color: var(--fjord-deep);
-    font-size: 0.86rem;
-    font-weight: 700;
-    line-height: 1.55;
-  }
-  .food-photo .photo-credit {
-    display: block;
-    margin-top: 5px;
-    color: var(--text-sub);
-    font-size: 0.72rem;
-    font-weight: 400;
-  }
-
   @media (max-width: 560px) {
     .practical-grid,
-    .transport-columns,
-    .food-list,
-    .food-photo-grid { grid-template-columns: 1fr; }
+    .transport-columns { grid-template-columns: 1fr; }
     .practical-card,
     .practical-panel { padding: 16px 14px; }
     .practical-nav { gap: 7px; }
@@ -1919,7 +1861,6 @@
       <a href="#tax-free">💳 TAX FREE</a>
       <a href="#safety">🆘 緊急時</a>
       <a href="#transport-info">🚆 鉄道・バス</a>
-      <a href="#norway-food">🍽️ 食事</a>
     </nav>
 
     <div class="practical-grid" id="daily-basics">
@@ -2021,37 +1962,6 @@
       </div>
     </article>
 
-    <article class="practical-panel food" id="norway-food">
-      <h3>🍽️ ノルウェーで食べたいもの</h3>
-      <p>冷たい海で育ったサーモンやニシンなど、新鮮な魚介はノルウェー旅行の楽しみのひとつ。ベルゲンなどの港町では、シーフードや家庭的な煮込み料理も味わえます。</p>
-
-      <div class="food-photo-grid" aria-label="ノルウェー料理の写真">
-        <figure class="food-photo salmon">
-          <img src="img/salmon.jpg" alt="レモンとハーブを添えた焼きサーモン" loading="lazy">
-          <figcaption>サーモン — 脂がのったノルウェーの定番シーフード</figcaption>
-        </figure>
-        <figure class="food-photo">
-          <img src="img/bacalao.jpg" alt="干ダラをトマトソースで煮込んだバカラオ" loading="lazy">
-          <figcaption>
-            バカラオ / Bacalao — 干ダラをトマトソースで煮込んだ、西海岸の名物料理。
-            <span class="photo-credit">写真：Netha Hussain / Wikimedia Commons（CC0）</span>
-          </figcaption>
-        </figure>
-        <figure class="food-photo">
-          <img src="img/fish-soup.jpg" alt="魚介が入った温かい魚のスープ" loading="lazy">
-          <figcaption>魚のスープ — 寒い日にうれしい具だくさんの一皿</figcaption>
-        </figure>
-        <figure class="food-photo">
-          <img src="img/brunost.jpg" alt="ノルウェーの茶色いチーズ、ブルンオスト" loading="lazy">
-          <figcaption>ブラウンチーズ / Brunost — キャラメルのような甘みがある茶色いチーズ。パンやワッフルと好相性。</figcaption>
-        </figure>
-      </div>
-
-      <div class="practical-subsection">
-        <h4>ブラウンチーズの種類</h4>
-        <p><strong>Geitost（ヤイトオスト）</strong>はヤギ乳100％で、独特の風味があります。牛乳とヤギ乳を合わせた<strong>Gudbrandsdalsost（グドブランスダールスオスト）</strong>は、よりキャラメルに近い甘さで食べやすいタイプです。どちらもBrunost（茶色のチーズ）の仲間です。</p>
-      </div>
-    </article>
   </section>
 
 </main>
