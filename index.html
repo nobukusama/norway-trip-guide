@@ -178,9 +178,22 @@
   }
   .overview .ov-date a {
     color: var(--fjord-blue);
-    text-decoration: none;
+    display: inline-block;
+    padding: 6px 2px;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(31, 58, 92, .35);
   }
-  .overview .ov-date a:hover { text-decoration: underline; }
+  .overview .ov-date a::after {
+    content: " ›";
+    font-weight: 700;
+    opacity: .55;
+  }
+  .overview .ov-date a:hover,
+  .overview .ov-date a:focus-visible {
+    text-decoration-color: currentColor;
+  }
   .ov-stay {
     display: inline-block;
     margin-top: 5px;
